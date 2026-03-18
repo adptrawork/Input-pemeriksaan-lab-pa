@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Hasil Patologi Anatomi</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
         /* Gaya dasar untuk merapikan tampilan */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f6f9;
             color: #333;
             padding: 20px;
@@ -204,7 +206,7 @@
 
         <div class="card">
             <div class="card-header active" onclick="toggleCard('body1', this)">
-                <span>1. Jaringan kecil < 5 cm (< 5 cc)</span>
+                <span>I. Biopsi esofagus, gaster, colon 1-2 botol</span>
                         <span class="icon">▼</span>
             </div>
             <div class="card-body show" id="body1">
@@ -222,37 +224,42 @@
                 <div class="row">
                     <div class="form-group col">
                         <label>Lokasi Jaringan</label>
-                        <input type="text" class="form-control" name="lokasi[0]" value="Serviks">
+                        <input type="text" class="form-control" name="lokasi[0]" value="Gaster (Antrum)">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control" name="makroskopis[0]">Diterima 2 buah kantong jaringan...</textarea>
+                    <textarea class="form-control" name="makroskopis[0]">Diterima 3 keping jaringan keputihan, ukuran diameter 0,2 - 0,3 cm, konsistensi lunak.</textarea>
                 </div>
                 <div class="form-group">
                     <label>Mikroskopis</label>
                     <textarea class="form-control" name="mikroskopis[0]"
-                        id="mikro_1">Tampak stroma ovarium dan jaringan ikat...</textarea>
+                        id="mikro_1">Tampak fragmen mukosa gaster dengan foveola gastrika yang intak. Pada lamina propria tampak sebukan sel-sel radang limfosit, sel plasma, dan beberapa neutrofil. Kelenjar-kelenjar gaster dalam batas normal. Ditemukan bentukan bakteri Helicobacter pylori pada pewarnaan rutin. Tidak tampak sel tumor ganas.</textarea>
                 </div>
                 <div class="form-group">
                     <label>Kesimpulan</label>
                     <textarea class="form-control" name="kesimpulan[0]"
-                        id="kesimpulan_1">Kista endometriosis ovarium benigna</textarea>
+                        id="kesimpulan_1">Gastritis kronis aktif terkait infeksi Helicobacter pylori.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Saran</label>
+                    <textarea class="form-control" name="saran[0]"
+                        id="saran_1">Terapi eradikasi H. pylori sesuai indikasi klinis.</textarea>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body2', this)">
-                <span>2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
+                <span>II. Jaringan kecil < 5 cm (< 5 cc)</span>
                 <span class="icon">►</span>
             </div>
             <div class="card-body" id="body2">
                 <div class="link-control-box">
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
                     <select onchange="handleLinkTarget(this, 'group2')" name="link_to[1]">
-                        <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1">1. Jaringan kecil < 5 cm (< 5 cc)</option>
+                        <option value="none" selected>-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1">I. Jaringan Pertama</option>
                     </select>
                 </div>
                 <div class="row">
@@ -269,23 +276,27 @@
 
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control" name="makroskopis[1]">Diterima keping-keping jaringan...</textarea>
+                    <textarea class="form-control" name="makroskopis[1]">Diterima 1 keping jaringan polipoid, ukuran diameter 0,5 cm, konsistensi kenyal.</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Lokasi Jaringan</label>
-                    <input type="text" class="form-control" name="lokasi[1]" placeholder="Contoh: Endometrium">
+                    <input type="text" class="form-control" name="lokasi[1]" value="Colon (Ascendens)">
                 </div>
 
                 <div id="group2">
                     <div class="form-group">
                         <label>Mikroskopis</label>
                         <textarea class="form-control"
-                            name="mikroskopis[1]">Tampak jaringan endometrium yang tumbuh polipoid...</textarea>
+                            name="mikroskopis[1]">Sediaan menunjukkan polip adenomatosa yang terdiri dari proliferasi kelenjar-kelenjar yang dilapisi epitel torak dengan inti hiperkromatik, memanjang, dan stratifikasi basal (low-grade dysplasia). Tidak ditemukan tanda keganasan invasif.</textarea>
                     </div>
                     <div class="form-group">
                         <label>Kesimpulan</label>
-                        <textarea class="form-control" name="kesimpulan[1]">Polip endometrium benigna</textarea>
+                        <textarea class="form-control" name="kesimpulan[1]">Adenoma Tubulare dengan displasia derajat rendah.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Saran</label>
+                        <textarea class="form-control" name="saran[1]">Eksisi lengkap disarankan untuk pencegahan keganasan.</textarea>
                     </div>
                 </div>
 
@@ -297,7 +308,7 @@
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body3', this)">
-                <span>3. Jaringan besar > 10 cm (> 10 cc) atau 2 lokasi yang berbeda</span>
+                <span>III. Biopsi esofagus, gaster, colon 1-2 botol</span>
                 <span class="icon">►</span>
             </div>
             <div class="card-body" id="body3">
@@ -305,8 +316,8 @@
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
                     <select onchange="handleLinkTarget(this, 'group3')" name="link_to[2]">
                         <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1" selected>1. Jaringan kecil < 5 cm (< 5 cc)</option>
-                        <option value="2">2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</option>
+                        <option value="1" selected>I. Jaringan Pertama</option>
+                        <option value="2">II. Jaringan Kedua</option>
                     </select>
                 </div>
                 <div class="row">
@@ -324,12 +335,12 @@
 
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control" name="makroskopis[2]">Diterima 1 buah jaringan berongga...</textarea>
+                    <textarea class="form-control" name="makroskopis[2]">Diterima 2 keping jaringan kecoklatan, ukuran diameter 0,2 - 0,4 cm, konsistensi kenyal.</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Lokasi Jaringan</label>
-                    <input type="text" class="form-control" name="lokasi[2]" placeholder="Contoh: Ovarium Kiri">
+                    <input type="text" class="form-control" name="lokasi[2]" value="Gaster (Korpus)">
                 </div>
 
                 <div id="group3" style="display: none;">
@@ -341,6 +352,10 @@
                         <label>Kesimpulan</label>
                         <textarea class="form-control" name="kesimpulan[2]"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label>Saran</label>
+                        <textarea class="form-control" name="saran[2]"></textarea>
+                    </div>
                 </div>
 
                 <div id="alert_group3" class="linked-alert" style="display: block;">
@@ -351,17 +366,17 @@
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body4', this)">
-                <span>4. Jaringan kecil < 5 cm (< 5 cc) I</span>
+                <span>IV. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
                         <span class="icon">►</span>
             </div>
             <div class="card-body" id="body4">
                 <div class="link-control-box">
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
                     <select onchange="handleLinkTarget(this, 'group4')" name="link_to[3]">
-                        <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1">1. Jaringan kecil < 5 cm (< 5 cc)</option>
-                        <option value="2">2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</option>
-                        <option value="3">3. Jaringan besar > 10 cm (> 10 cc) atau 2 lokasi yang berbeda</option>
+                        <option value="none" selected>-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1">I. Jaringan Pertama</option>
+                        <option value="2">II. Jaringan Kedua</option>
+                        <option value="3">III. Jaringan Ketiga</option>
                     </select>
                 </div>
                 <div class="row">
@@ -379,23 +394,27 @@
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
                     <textarea class="form-control"
-                        name="makroskopis[3]">Diterima massa padat kenyal ukuran 5x4x3 cm...</textarea>
+                        name="makroskopis[3]">Diterima 1 buah jaringan kistik ukuran 10 x 8 x 5 cm. Permukaan luar licin, pembelahan berisi cairan jernih kekuningan.</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Lokasi Jaringan</label>
-                    <input type="text" class="form-control" name="lokasi[3]" placeholder="Contoh: Adnexa Kanan">
+                    <input type="text" class="form-control" name="lokasi[3]" value="Ovarium Kanan">
                 </div>
 
                 <div id="group4">
                     <div class="form-group">
                         <label>Mikroskopis</label>
                         <textarea class="form-control"
-                            name="mikroskopis[3]">Tampak proliferasi sel-sel tumor ganas...</textarea>
+                            name="mikroskopis[3]">Dinding kista dilapisi oleh selapis epitel kuboid hingga silindris bersilia (tipe tuba) yang intak tanpa adanya stratifikasi atau atipia nukleus. Stroma di bawahnya terdiri dari jaringan ikat fibrokolagen yang padat. Tidak ditemukan tanda-tanda keganasan.</textarea>
                     </div>
                     <div class="form-group">
                         <label>Kesimpulan</label>
-                        <textarea class="form-control" name="kesimpulan[3]">Karsinoma adnexa maligna</textarea>
+                        <textarea class="form-control" name="kesimpulan[3]">Cystadenoma Serosum Ovarii, Benigna.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Saran</label>
+                        <textarea class="form-control" name="saran[3]">Observasi klinis rutin disarankan.</textarea>
                     </div>
                 </div>
 

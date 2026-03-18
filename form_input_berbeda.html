@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Hasil Patologi Anatomi</title>
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
         /* Gaya dasar untuk merapikan tampilan */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f6f9;
             color: #333;
             padding: 20px;
@@ -205,7 +208,7 @@
 
         <div class="card">
             <div class="card-header active" onclick="toggleCard('body1', this)">
-                <span>1. Jaringan kecil < 5 cm (< 5 cc)</span>
+                <span>I. Biopsi esofagus, gaster, colon 1-2 botol</span>
                         <span class="icon">▼</span>
             </div>
             <div class="card-body show" id="body1">
@@ -224,38 +227,32 @@
                 <div class="form-group">
                     <div class="form-group col">
                         <label>Lokasi Jaringan</label>
-                        <input type="text" class="form-control" name="lokasi[0]" placeholder="Contoh: Ovarium Kanan">
+                        <input type="text" class="form-control" name="lokasi[0]" value="Esofagus">
                     </div>
                     <label>Makroskopis</label>
-                    <textarea class="form-control" name="makroskopis[0]"
-                        placeholder="Ketik deskripsi makroskopis..."></textarea>
+                    <textarea class="form-control" name="makroskopis[0]">Diterima 2 keping jaringan, ukuran masing-masing 0,3 cm dan 0,4 cm, berwarna putih keabuan, konsistensi kenyal. Semua dicetak dalam 1 blok.</textarea>
                 </div>
                 <div class="form-group">
                     <label>Mikroskopis</label>
-                    <textarea class="form-control" name="mikroskopis[0]"
-                        placeholder="Ketik deskripsi mikroskopis..."></textarea>
+                    <textarea class="form-control" name="mikroskopis[0]">Sediaan biopsi menunjukkan fragmen mukosa esofagus berlapis epitel skuamosa yang mengalami hiperplasia sel basal dan pemanjangan papila lamina propria. Tampak sebukan sel radang limfosit dan neutrofil intraepitelial. Tidak tampak sel ganas.</textarea>
                 </div>
                 <div class="form-group">
                     <label>Kesimpulan</label>
-                    <textarea class="form-control" name="kesimpulan[0]"
-                        placeholder="Ketik kesimpulan atau diagnosis akhir..."></textarea>
+                    <textarea class="form-control" name="kesimpulan[0]">Esofagitis refluks kronis eksaserbasi akut.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Saran</label>
+                    <textarea class="form-control" name="saran[0]">Korelasi klinis dan endoskopi lebih lanjut.</textarea>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body2', this)">
-                <span>2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
+                <span>II. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
                 <span class="icon">►</span>
             </div>
-            <div class="card-body show" id="body2">
-                <div class="link-control-box">
-                    <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
-                    <select onchange="handleLinkTarget(this, 'group3')" name="link_to[1]">
-                        <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1" selected>1. Jaringan kecil < 5 cm (< 5 cc)</option>
-                    </select>
-                </div>
+            <div class="card-body" id="body2">
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
@@ -268,30 +265,66 @@
                     </div>
                 </div>
 
-
                 <div class="form-group">
                     <label>Lokasi Jaringan</label>
-                    <input type="text" class="form-control" name="lokasi[1]" placeholder="Contoh: Payudara Kanan">
+                    <input type="text" class="form-control" name="lokasi[1]" value="Payudara Kanan">
                 </div>
 
                 <div class="form-group">
-                    <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control" name="makroskopis[1]">Diterima 1 buah jaringan berongga...</textarea>
+                    <label>Makroskopis</label>
+                    <textarea class="form-control" name="makroskopis[1]">Diterima 1 buah jaringan berbenjol tak beraturan ukuran 4 x 3 x 2 cm. Pada pembelahan tampak penampang padat berwarna putih kecoklatan, kenyal.</textarea>
                 </div>
 
-                <div id="group3" style="display: none;">
-                    <div class="form-group">
-                        <label>Mikroskopis</label>
-                        <textarea class="form-control" name="mikroskopis[1]"></textarea>
+                <div class="form-group">
+                    <label>Mikroskopis</label>
+                    <textarea class="form-control" name="mikroskopis[1]">Sediaan jaringan payudara menunjukkan proliferasi sel-sel epitel duktus yang tersusun padat, membentuk struktur cribriform dan komedo nekrosis di bagian tengah. Inti sel pleomorfik, hiperkromatik dengan aktivitas mitosis meningkat. Tampak invasi sel tumor ke stroma sekitarnya.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Kesimpulan</label>
+                    <textarea class="form-control" name="kesimpulan[1]">Invasive Ductal Carcinoma, Mammae Dextra.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Saran</label>
+                    <textarea class="form-control" name="saran[1]">Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67) untuk penentuan terapi lanjutan.</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" onclick="toggleCard('body3', this)">
+                <span>III. Jaringan kecil < 5 cm (< 5 cc)</span>
+                <span class="icon">►</span>
+            </div>
+            <div class="card-body" id="body3">
+                <div class="row">
+                    <div class="form-group col">
+                        <label>Dokter Tujuan</label>
+                        <input type="text" class="form-control" name="dokter_tujuan[2]" value="dr. Betty Marlina Sinaga">
                     </div>
-                    <div class="form-group">
-                        <label>Kesimpulan</label>
-                        <textarea class="form-control" name="kesimpulan[1]"></textarea>
+                    <div class="form-group col">
+                        <label>Dokter Konsul</label>
+                        <input type="text" class="form-control" name="dokter_konsul[2]" value="dr. Udin ">
                     </div>
                 </div>
-
-                <div id="alert_group3" class="linked-alert" style="display: block;">
-                    Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan sediaan yang dipilih.
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" name="lokasi[2]" value="KGB Leher">
+                </div>
+                <div class="form-group">
+                    <label>Makroskopis</label>
+                    <textarea class="form-control" name="makroskopis[2]">Diterima 3 buah nodul jaringan, ukuran terbesar 1,5 cm, terkecil 0,5 cm, penampang kecoklatan.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Mikroskopis</label>
+                    <textarea class="form-control" name="mikroskopis[2]">Struktur kelenjar getah bening masih intak. Tampak folikel-folikel limfoid reaktif dengan sentrum germinativum yang melebar. Tampak sebukan sel makrofag. Tidak tampak metastasis sel tumor.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Kesimpulan</label>
+                    <textarea class="form-control" name="kesimpulan[2]">Limfadenitis reaktif kronis.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Saran</label>
+                    <textarea class="form-control" name="saran[2]">Pemantauan klinis.</textarea>
                 </div>
             </div>
         </div>
