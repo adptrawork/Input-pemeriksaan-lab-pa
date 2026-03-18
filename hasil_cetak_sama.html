@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Hasil PA - Skenario Dinamis</title>
+    <style>
+        /* Pengaturan Font dan Kertas untuk Cetak */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #000;
+            line-height: 1.5;
+            background-color: #525659;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .page-a4 {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+
+        /* Header Rumah Sakit */
+        .kop-surat {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .kop-surat h3 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .kop-surat h2 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .kop-surat p {
+            margin: 2px 0 0 0;
+            font-size: 11px;
+        }
+
+        /* Judul Dokumen */
+        .judul-dokumen {
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+
+        /* Tabel Data Pasien */
+        .tabel-pasien {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 11px;
+        }
+
+        .tabel-pasien td {
+            padding: 2px 5px;
+            vertical-align: top;
+        }
+
+        .tabel-pasien .label {
+            width: 120px;
+        }
+
+        .tabel-pasien .titik-dua {
+            width: 10px;
+        }
+
+        /* Konten Hasil PA */
+        .hasil-pa {
+            margin-top: 20px;
+        }
+
+        .hasil-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .section-judul {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .section-isi {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .item-list {
+            margin-bottom: 8px;
+        }
+
+        .group-title {
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        /* Tanda Tangan */
+        .ttd-container {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .ttd-box {
+            float: right;
+            text-align: center;
+            width: 250px;
+        }
+
+        .ttd-box img {
+            width: 80px;
+            margin: 10px 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media print {
+            body {
+                background-color: transparent;
+                padding: 0;
+            }
+
+            .page-a4 {
+                box-shadow: none;
+                width: auto;
+                min-height: auto;
+                padding: 0;
+                margin: 0;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 20mm;
+            }
+
+            .nav-button {
+                display: none;
+            }
+        }
+
+        /* Tombol Navigasi */
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="form_input_sama.html" class="nav-button">← Kembali ke Form Input</a>
+
+    <div class="page-a4">
+        <div class="kop-surat">
+            <h3>PEMERINTAH KOTA JAMBI</h3>
+            <h2>RUMAH SAKIT UMUM DAERAH H. ABDUL MANAP</h2>
+            <p>Jl. SK. Rd. Syahbudin, Mayang Mangurai, Alam Barajo, Kota Jambi</p>
+        </div>
+
+        <div class="judul-dokumen">LAPORAN HASIL PEMERIKSAAN PATOLOGI ANATOMIK</div>
+
+        <table class="tabel-pasien">
+            <tr>
+                <td class="label">Nama</td>
+                <td class="titik-dua">:</td>
+                <td>RUFIKA WAHYU</td>
+                <td class="label">No.PA</td>
+                <td class="titik-dua">:</td>
+                <td>260156/1/H</td>
+            </tr>
+            <tr>
+                <td class="label">Lokasi</td>
+                <td class="titik-dua">:</td>
+                <td colspan="4">Polip Cervix, Endometrium, Kista Ovarium, Massa Adnexa</td>
+            </tr>
+        </table>
+        <hr style="border: 0; border-top: 1px dashed #000; margin-bottom: 20px;">
+
+        <div class="hasil-pa">
+            <div class="hasil-title">HASIL PEMERIKSAAN PATOLOGI</div>
+
+            <div class="section-judul">Makroskopik</div>
+            <div class="section-isi">
+                <div class="item-list"><strong>I. Polip Cervix:</strong> Diterima 2 buah kantong jaringan dengan ukuran
+                    terbesar 1,2 cm, warna kecoklatan.</div>
+                <div class="item-list"><strong>II. Endometrium:</strong> Diterima keping-keping jaringan sebanyak 1 cc,
+                    bentuk tidak beraturan, warna kecoklatan.</div>
+                <div class="item-list"><strong>III. Kista Ovarium:</strong> Diterima 1 buah jaringan berongga ukuran
+                    3x2x1 cm, berisi cairan jernih.</div>
+                <div class="item-list"><strong>IV. Massa Adnexa:</strong> Diterima massa padat kenyal ukuran 5x4x3 cm,
+                    penampang putih keabuan.</div>
+            </div>
+
+            <div class="section-judul">Mikroskopik</div>
+            <div class="section-isi">
+                <div class="item-list">
+                    <div class="group-title">Sampel sediaan I dan III menunjukkan gambaran yang serupa sebagai berikut:
+                    </div>
+                    Tampak stroma ovarium dan jaringan ikat fibrokolagen yang hialinisasi, bersebukan sel-sel limfosit
+                    dan fokus perdarahan. Diantaranya tampak kelenjar dilapisi epitel kuboid selapis. Tidak ditemukan
+                    sel tumor ganas pada sampel sediaan ini.
+                </div>
+                <div class="item-list">
+                    <div class="group-title">Sampel sediaan II menunjukkan:</div>
+                    Tampak jaringan endometrium yang tumbuh polipoid dilapisi epitel torak dengan inti dalam batas
+                    normal. Stroma endometrium sebagian besar edematous dan tampak kelenjar endometrium bentuk tubular
+                    sampai kistik.
+                </div>
+                <div class="item-list">
+                    <div class="group-title">Sampel sediaan IV menunjukkan:</div>
+                    Tampak proliferasi sel-sel tumor ganas berbentuk bulat hingga oval, inti hiperkromatik, pleomorfik,
+                    dengan rasio inti-sitoplasma meningkat. Tampak area nekrosis yang luas dan aktivitas mitosis yang
+                    tinggi.
+                </div>
+            </div>
+
+            <div class="section-judul">Kesimpulan</div>
+            <div class="section-isi">
+                <div class="item-list"><strong>I & III.</strong> Kista endometriosis ovarium benigna</div>
+                <div class="item-list"><strong>II.</strong> Polip endometrium benigna</div>
+                <div class="item-list"><strong>IV.</strong> Karsinoma adnexa maligna</div>
+            </div>
+        </div>
+
+        <div class="ttd-container clearfix">
+            <div class="ttd-box">
+                <p>Terima kasih atas kepercayaan sejawat,<br>Jambi, 18 Maret 2026</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=dr.Betty_SpPA"
+                    alt="QR Code TTD">
+                <p style="font-weight: bold; margin-bottom: 0;">(dr. Betty Marlina Sinaga, Sp. PA, M.Kes)</p>
+                <p style="margin-top: 2px;">NIP.198008192006042006</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
