@@ -11,80 +11,102 @@
         /* Pengaturan Font dan Kertas untuk Cetak */
         body {
             font-family: 'Roboto', sans-serif;
-            font-size: 12px;
+            font-size: 11pt;
             color: #000;
-            line-height: 1.5;
-            background-color: #525659;
-            /* Warna latar luar kertas */
+            line-height: 1.4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f1f5f9;
         }
 
         .page-a4 {
             width: 210mm;
             min-height: 297mm;
-            padding: 20mm;
-            margin: 0 auto;
+            padding: 15mm 20mm;
+            margin: 20px auto;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
+            border-radius: 4px;
         }
 
-        /* Header Rumah Sakit */
-        .kop-surat {
+        /* User Header Styles */
+        .head-cetak {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        #logo img {
+            height: 90px;
+            width: auto;
+        }
+
+        .kop-text {
             text-align: center;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
         }
 
-        .kop-surat h3 {
+        .kop-atas {
+            font-size: 13pt;
             margin: 0;
-            font-size: 14px;
-        }
-
-        .kop-surat h2 {
-            margin: 0;
-            font-size: 16px;
+            line-height: 1.2;
             font-weight: bold;
+            color: #000;
         }
 
-        .kop-surat p {
-            margin: 2px 0 0 0;
-            font-size: 11px;
+        .kop-alamat {
+            font-size: 8.5pt;
+            margin-top: 5px;
+            color: #334155;
+            line-height: 1.3;
         }
 
-        /* Judul Dokumen */
-        .judul-dokumen {
+        hr.kop-hr {
+            border: none;
+            border-top: 2px solid #000;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .head-cetak-instansi {
+            font-size: 14pt;
+            font-weight: bold;
             text-align: center;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 20px;
+            margin: 15px 0 20px 0;
             text-decoration: underline;
+            text-transform: uppercase;
         }
 
-        /* Tabel Data Pasien */
-        .tabel-pasien {
+        /* User Identity Table Styles */
+        .table-outer {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 11px;
+            margin-bottom: 25px;
+            font-size: 10pt;
         }
 
-        .tabel-pasien td {
-            padding: 2px 5px;
+        .table-outer td {
+            padding: 4px 5px;
             vertical-align: top;
         }
 
-        .tabel-pasien .label {
-            width: 120px;
+        /* Set specific widths for label columns */
+        .table-outer td:nth-child(1),
+        .table-outer td:nth-child(4) {
+            width: 130px;
+            font-weight: 500;
         }
 
-        .tabel-pasien .titik-dua {
-            width: 10px;
+        .table-outer td:nth-child(2),
+        .table-outer td:nth-child(5) {
+            width: 15px;
+            text-align: center;
         }
 
-        /* Konten Hasil PA */
+        /* Result Sections */
         .hasil-pa {
             margin-top: 20px;
         }
@@ -92,51 +114,50 @@
         .hasil-title {
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
-            margin-bottom: 15px;
+            font-size: 12pt;
+            margin-bottom: 20px;
+            text-decoration: underline;
         }
 
         .section-judul {
             font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 5px;
+            margin-top: 20px;
+            font-size: 11pt;
+            text-decoration: underline;
+            text-transform: uppercase;
         }
 
         .section-isi {
+            margin-top: 8px;
             text-align: justify;
-            margin-bottom: 15px;
+            line-height: 1.5;
         }
 
         .item-list {
-            margin-bottom: 5px;
+            margin-bottom: 12px;
         }
 
-        /* Tanda Tangan */
+        /* Signature Section */
         .ttd-container {
-            width: 100%;
             margin-top: 50px;
         }
 
         .ttd-box {
             float: right;
+            width: 300px;
             text-align: center;
-            width: 250px;
         }
 
-        .ttd-box img {
-            width: 80px;
-            /* Ukuran placeholder QR */
-            margin: 10px 0;
+        .ttd-box p {
+            margin: 5px 0;
         }
 
-        /* Clearfix */
         .clearfix::after {
             content: "";
             clear: both;
             display: table;
         }
 
-        /* Hilangkan elemen tak perlu saat di-print beneran */
         @media print {
             body {
                 background-color: transparent;
@@ -144,37 +165,52 @@
             }
 
             .page-a4 {
-                box-shadow: none;
-                width: auto;
-                min-height: auto;
-                padding: 0;
                 margin: 0;
+                box-shadow: none;
+                width: 100%;
+                padding: 10mm;
             }
 
-            @page {
-                size: A4 portrait;
-                margin: 20mm;
-            }
-
-            .nav-button {
+            .nav-button,
+            .btn-print {
                 display: none;
             }
         }
 
-        /* Tombol Navigasi */
+        /* Buttons */
         .nav-button {
             display: inline-block;
             padding: 10px 20px;
             background-color: #3b82f6;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin: 20px;
+            transition: background 0.2s;
         }
 
         .nav-button:hover {
             background-color: #2563eb;
+        }
+
+        .btn-print {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1e293b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-print:hover {
+            background: #0f172a;
         }
     </style>
 </head>
@@ -182,45 +218,82 @@
 <body>
 
     <a href="form_input_berbeda.html" class="nav-button">← Kembali ke Form Input</a>
+    <button onclick="window.print()" class="btn-print">Cetak Dokumen</button>
 
     <div class="page-a4">
-        <div class="kop-surat">
-            <h3>PEMERINTAH KOTA JAMBI<br>DINAS KESEHATAN</h3>
-            <h2>RUMAH SAKIT UMUM DAERAH H. ABDUL MANAP</h2>
-            <p>Jl. SK. Rd. Syahbudin, Mayang Mangurai, Alam Barajo, Kota Jambi<br>
-                Telp: (0741) 5910190, Fax: (0741) 5910190<br>
-                Website: https://rsudkotajambi.id/; Email: rsudjambikota@gmail.com</p>
+        <div class="head-cetak">
+            <div id="logo">
+                <img src="http://103.147.236.140/assets/images/logo/Kota%20Jambi.png" alt="Logo">
+            </div>
+            <div class="kop-text">
+                <h1 class="kop-atas">PEMERINTAH KOTA JAMBI</h1>
+                <h1 class="kop-atas">DINAS KESEHATAN</h1>
+                <h1 class="kop-atas">RUMAH SAKIT UMUM DAERAH H. ABDUL MANAP</h1>
+                <div class="kop-alamat">
+                    Jl. Sk. Rd. Syahbudin, Mayang Mangurai, Alam Barajo, Kota Jambi<br>
+                    Telp: (0741) 5910190, Fax: (0741) 5910190<br>
+                    Website : https://rsudkotajambi.id/; Email: rsudjambikota@gmail.com
+                </div>
+            </div>
         </div>
+        <hr class="kop-hr">
 
-        <div class="judul-dokumen">
-            LAPORAN HASIL PEMERIKSAAN PATOLOGI ANATOMIK
-        </div>
+        <div class="head-cetak-instansi">LAPORAN HASIL PEMERIKSAAN PATOLOGI ANATOMIK</div>
 
-        <table class="tabel-pasien">
-            <tr>
-                <td class="label">Nama</td>
-                <td class="titik-dua">:</td>
-                <td>Ny. Ratna Sari</td>
-                <td class="label">No. PA</td>
-                <td class="titik-dua">:</td>
-                <td>260410/1/H</td>
-            </tr>
-            <tr>
-                <td class="label">Umur</td>
-                <td class="titik-dua">:</td>
-                <td>45 Tahun</td>
-                <td class="label">Dokter Pengirim</td>
-                <td class="titik-dua">:</td>
-                <td>dr. Budi, Sp.B</td>
-            </tr>
-            <tr>
-                <td class="label">Lokasi Jaringan</td>
-                <td class="titik-dua">:</td>
-                <td colspan="4">Esofagus, Payudara Kanan, KGB Leher</td>
-            </tr>
+        <table class="table-outer">
+            <tbody>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td>NY. RATNA SARI</td>
+                    <td>No.PA</td>
+                    <td>:</td>
+                    <td>260410/1/H</td>
+                </tr>
+                <tr>
+                    <td>Umur</td>
+                    <td>:</td>
+                    <td>45 Tahun</td>
+                    <td>Dokter Pengirim</td>
+                    <td>:</td>
+                    <td>dr. Budi, Sp.B</td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>Perempuan</td>
+                    <td>RS</td>
+                    <td>:</td>
+                    <td>RSUD H. ABDUL MANAP</td>
+                </tr>
+                <tr>
+                    <td>Ruangan</td>
+                    <td>:</td>
+                    <td>POLI BEDAH</td>
+                    <td>No.MRE</td>
+                    <td>:</td>
+                    <td>210984</td>
+                </tr>
+                <tr>
+                    <td>Diterima tanggal</td>
+                    <td>:</td>
+                    <td>18 Maret 2026</td>
+                    <td>Lokasi</td>
+                    <td>:</td>
+                    <td>Esofagus, Payudara Kanan, KGB Leher</td>
+                </tr>
+                <tr>
+                    <td>Cara Peroleh</td>
+                    <td>:</td>
+                    <td>Operasi</td>
+                    <td>Keterangan Klinis</td>
+                    <td>:</td>
+                    <td>Esofagitis & Massa Mammae Dextra</td>
+                </tr>
+            </tbody>
         </table>
 
-        <hr style="border: 0; border-top: 1px dashed #000; margin-bottom: 20px;">
+        <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin-bottom: 25px;">
 
         <div class="hasil-pa">
             <div class="hasil-title">HASIL PEMERIKSAAN PATOLOGI</div>
