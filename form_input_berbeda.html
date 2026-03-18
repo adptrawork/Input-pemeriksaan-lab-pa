@@ -213,28 +213,32 @@
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[0]"
+                            value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[0]" value="dr. Udin ">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-group col">
                         <label>Lokasi Jaringan</label>
-                        <input type="text" class="form-control" placeholder="Contoh: Ovarium Kanan">
+                        <input type="text" class="form-control" name="lokasi[0]" placeholder="Contoh: Ovarium Kanan">
                     </div>
                     <label>Makroskopis</label>
-                    <textarea class="form-control" placeholder="Ketik deskripsi makroskopis..."></textarea>
+                    <textarea class="form-control" name="makroskopis[0]"
+                        placeholder="Ketik deskripsi makroskopis..."></textarea>
                 </div>
                 <div class="form-group">
                     <label>Mikroskopis</label>
-                    <textarea class="form-control" placeholder="Ketik deskripsi mikroskopis..."></textarea>
+                    <textarea class="form-control" name="mikroskopis[0]"
+                        placeholder="Ketik deskripsi mikroskopis..."></textarea>
                 </div>
                 <div class="form-group">
                     <label>Kesimpulan</label>
-                    <textarea class="form-control" placeholder="Ketik kesimpulan atau diagnosis akhir..."></textarea>
+                    <textarea class="form-control" name="kesimpulan[0]"
+                        placeholder="Ketik kesimpulan atau diagnosis akhir..."></textarea>
                 </div>
             </div>
         </div>
@@ -247,7 +251,7 @@
             <div class="card-body show" id="body2">
                 <div class="link-control-box">
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
-                    <select onchange="handleLinkTarget(this, 'group3')" name="link_to_specimen_3">
+                    <select onchange="handleLinkTarget(this, 'group3')" name="link_to[1]">
                         <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
                         <option value="1" selected>1. Jaringan kecil < 5 cm (< 5 cc)</option>
                     </select>
@@ -255,28 +259,34 @@
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[1]"
+                            value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[1]" value="dr. Udin ">
                     </div>
                 </div>
 
 
                 <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" name="lokasi[1]" placeholder="Contoh: Payudara Kanan">
+                </div>
+
+                <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control">Diterima 1 buah jaringan berongga...</textarea>
+                    <textarea class="form-control" name="makroskopis[1]">Diterima 1 buah jaringan berongga...</textarea>
                 </div>
 
                 <div id="group3" style="display: none;">
                     <div class="form-group">
                         <label>Mikroskopis</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="mikroskopis[1]"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Kesimpulan</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="kesimpulan[1]"></textarea>
                     </div>
                 </div>
 

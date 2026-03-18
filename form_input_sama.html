@@ -204,78 +204,88 @@
 
         <div class="card">
             <div class="card-header active" onclick="toggleCard('body1', this)">
-                <span>1. Polip Cervix</span>
-                <span class="icon">▼</span>
+                <span>1. Jaringan kecil < 5 cm (< 5 cc)</span>
+                        <span class="icon">▼</span>
             </div>
             <div class="card-body show" id="body1">
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[0]"
+                            value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[0]" value="dr. Udin ">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col">
                         <label>Lokasi Jaringan</label>
-                        <input type="text" class="form-control" value="Serviks">
+                        <input type="text" class="form-control" name="lokasi[0]" value="Serviks">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control">Diterima 2 buah kantong jaringan...</textarea>
+                    <textarea class="form-control" name="makroskopis[0]">Diterima 2 buah kantong jaringan...</textarea>
                 </div>
                 <div class="form-group">
                     <label>Mikroskopis</label>
-                    <textarea class="form-control" id="mikro_1">Tampak stroma ovarium dan jaringan ikat...</textarea>
+                    <textarea class="form-control" name="mikroskopis[0]"
+                        id="mikro_1">Tampak stroma ovarium dan jaringan ikat...</textarea>
                 </div>
                 <div class="form-group">
                     <label>Kesimpulan</label>
-                    <textarea class="form-control" id="kesimpulan_1">Kista endometriosis ovarium benigna</textarea>
+                    <textarea class="form-control" name="kesimpulan[0]"
+                        id="kesimpulan_1">Kista endometriosis ovarium benigna</textarea>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body2', this)">
-                <span>2. Endometrium</span>
+                <span>2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
                 <span class="icon">►</span>
             </div>
             <div class="card-body" id="body2">
                 <div class="link-control-box">
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
-                    <select onchange="handleLinkTarget(this, 'group2')">
+                    <select onchange="handleLinkTarget(this, 'group2')" name="link_to[1]">
                         <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1">1. Polip Cervix</option>
+                        <option value="1">1. Jaringan kecil < 5 cm (< 5 cc)</option>
                     </select>
                 </div>
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[1]"
+                            value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[1]" value="dr. Udin ">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control">Diterima keping-keping jaringan...</textarea>
+                    <textarea class="form-control" name="makroskopis[1]">Diterima keping-keping jaringan...</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" name="lokasi[1]" placeholder="Contoh: Endometrium">
                 </div>
 
                 <div id="group2">
                     <div class="form-group">
                         <label>Mikroskopis</label>
-                        <textarea class="form-control">Tampak jaringan endometrium yang tumbuh polipoid...</textarea>
+                        <textarea class="form-control"
+                            name="mikroskopis[1]">Tampak jaringan endometrium yang tumbuh polipoid...</textarea>
                     </div>
                     <div class="form-group">
                         <label>Kesimpulan</label>
-                        <textarea class="form-control">Polip endometrium benigna</textarea>
+                        <textarea class="form-control" name="kesimpulan[1]">Polip endometrium benigna</textarea>
                     </div>
                 </div>
 
@@ -287,43 +297,49 @@
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body3', this)">
-                <span>3. Kista Ovarium</span>
+                <span>3. Jaringan besar > 10 cm (> 10 cc) atau 2 lokasi yang berbeda</span>
                 <span class="icon">►</span>
             </div>
             <div class="card-body" id="body3">
                 <div class="link-control-box">
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
-                    <select onchange="handleLinkTarget(this, 'group3')" name="link_to_specimen_3">
+                    <select onchange="handleLinkTarget(this, 'group3')" name="link_to[2]">
                         <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1" selected>1. Polip Cervix</option>
-                        <option value="2">2. Endometrium</option>
+                        <option value="1" selected>1. Jaringan kecil < 5 cm (< 5 cc)</option>
+                        <option value="2">2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</option>
                     </select>
                 </div>
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[2]"
+                            value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[2]" value="dr. Udin ">
                     </div>
                 </div>
 
 
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control">Diterima 1 buah jaringan berongga...</textarea>
+                    <textarea class="form-control" name="makroskopis[2]">Diterima 1 buah jaringan berongga...</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" name="lokasi[2]" placeholder="Contoh: Ovarium Kiri">
                 </div>
 
                 <div id="group3" style="display: none;">
                     <div class="form-group">
                         <label>Mikroskopis</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="mikroskopis[2]"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Kesimpulan</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="kesimpulan[2]"></textarea>
                     </div>
                 </div>
 
@@ -335,43 +351,51 @@
 
         <div class="card">
             <div class="card-header" onclick="toggleCard('body4', this)">
-                <span>4. Massa Adnexa</span>
-                <span class="icon">►</span>
+                <span>4. Jaringan kecil < 5 cm (< 5 cc) I</span>
+                        <span class="icon">►</span>
             </div>
             <div class="card-body" id="body4">
                 <div class="link-control-box">
                     <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
-                    <select onchange="handleLinkTarget(this, 'group4')">
+                    <select onchange="handleLinkTarget(this, 'group4')" name="link_to[3]">
                         <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
-                        <option value="1">1. Polip Cervix</option>
-                        <option value="2">2. Endometrium</option>
-                        <option value="3">3. Kista Ovarium</option>
+                        <option value="1">1. Jaringan kecil < 5 cm (< 5 cc)</option>
+                        <option value="2">2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</option>
+                        <option value="3">3. Jaringan besar > 10 cm (> 10 cc) atau 2 lokasi yang berbeda</option>
                     </select>
                 </div>
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[3]"
+                            value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[3]" value="dr. Udin ">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Makroskopis (Selalu diisi spesifik)</label>
-                    <textarea class="form-control">Diterima massa padat kenyal ukuran 5x4x3 cm...</textarea>
+                    <textarea class="form-control"
+                        name="makroskopis[3]">Diterima massa padat kenyal ukuran 5x4x3 cm...</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" name="lokasi[3]" placeholder="Contoh: Adnexa Kanan">
                 </div>
 
                 <div id="group4">
                     <div class="form-group">
                         <label>Mikroskopis</label>
-                        <textarea class="form-control">Tampak proliferasi sel-sel tumor ganas...</textarea>
+                        <textarea class="form-control"
+                            name="mikroskopis[3]">Tampak proliferasi sel-sel tumor ganas...</textarea>
                     </div>
                     <div class="form-group">
                         <label>Kesimpulan</label>
-                        <textarea class="form-control">Karsinoma adnexa maligna</textarea>
+                        <textarea class="form-control" name="kesimpulan[3]">Karsinoma adnexa maligna</textarea>
                     </div>
                 </div>
 
