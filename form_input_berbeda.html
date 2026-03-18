@@ -67,12 +67,10 @@
         .card-body {
             padding: 20px;
             display: none;
-            /* Disembunyikan secara default */
         }
 
         .card-body.show {
             display: block;
-            /* Ditampilkan jika punya class 'show' */
         }
 
         /* Desain Form Input */
@@ -121,6 +119,38 @@
             min-height: 100px;
         }
 
+        /* Tampilan Khusus Fitur Link/Tautkan Hasil */
+        .link-control-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-control-box select {
+            flex: 1;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+        }
+
+        .linked-alert {
+            display: none;
+            /* Disembunyikan secara default */
+            background-color: #eff6ff;
+            border: 1px dashed #3b82f6;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
         /* Tombol Aksi */
         .action-buttons {
             margin-top: 30px;
@@ -140,7 +170,6 @@
 
         .btn-primary {
             background-color: #059669;
-            /* Warna hijau khas tombol simpan RS */
             color: white;
         }
 
@@ -162,14 +191,13 @@
 
 <body>
 
-    <!-- Header Navigasi -->
-    <div style="background-color: #1e293b; padding: 10px 20px; margin-bottom: 20px; border-radius: 8px;">
-        <a href="form_input_berbeda.html"
-            style="color: #60a5fa; text-decoration: none; font-weight: bold; margin-right: 20px;">← Input Berbeda</a>
-        <a href="form_input_sama.html" style="color: #94a3b8; text-decoration: none;">Input Sama →</a>
-    </div>
-
     <div class="container">
+        <div style="background-color: #1e293b; padding: 10px 20px; margin-bottom: 20px; border-radius: 8px;">
+            <a href="form_input_berbeda.html" style="color: #94a3b8; text-decoration: none; margin-right: 20px;">← Input
+                Berbeda</a>
+            <a href="form_input_sama.html" style="color: #60a5fa; text-decoration: none; font-weight: bold;">Input Sama
+                →</a>
+        </div>
         <div class="header-title">Input Hasil Patologi Anatomi (PA)</div>
 
         <div class="card">
@@ -178,17 +206,28 @@
                         <span class="icon">▼</span>
             </div>
             <div class="card-body show" id="body1">
+                <div class="link-control-box">
+                    <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
+                    <select onchange="handleLinkTarget(this, 'group2')">
+                        <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1">1. Polip Cervix</option>
+                    </select>
+                </div>
                 <div class="row">
                     <div class="form-group col">
-                        <label>Dokter Tujuan / Konsul</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga, Sp.PA" readonly>
+                        <label>Dokter Tujuan</label>
+                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
                     </div>
+                    <div class="form-group col">
+                        <label>Dokter Konsul</label>
+                        <input type="text" class="form-control" value="dr. Udin ">
+                    </div>
+                </div>
+                <div class="form-group">
                     <div class="form-group col">
                         <label>Lokasi Jaringan</label>
                         <input type="text" class="form-control" placeholder="Contoh: Ovarium Kanan">
                     </div>
-                </div>
-                <div class="form-group">
                     <label>Makroskopis</label>
                     <textarea class="form-control" placeholder="Ketik deskripsi makroskopis..."></textarea>
                 </div>
@@ -208,28 +247,45 @@
                 <span>2. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
                 <span class="icon">►</span>
             </div>
-            <div class="card-body" id="body2">
+            <div class="card-body show" id="body2">
+                <div class="link-control-box">
+                    <label>🔗 Samakan Mikroskopis & Kesimpulan dengan:</label>
+                    <select onchange="handleLinkTarget(this, 'group3')" name="link_to_specimen_3">
+                        <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1" selected>1. Polip Cervix</option>
+                        <option value="2">2. Endometrium</option>
+                    </select>
+                </div>
                 <div class="row">
                     <div class="form-group col">
-                        <label>Dokter Tujuan / Konsul</label>
-                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga, Sp.PA" readonly>
+                        <label>Dokter Tujuan</label>
+                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
-                        <label>Lokasi Jaringan</label>
-                        <input type="text" class="form-control" placeholder="Contoh: Ovarium Kiri">
+                        <label>Dokter Konsul</label>
+                        <input type="text" class="form-control" value="dr. Udin ">
                     </div>
                 </div>
+
+
                 <div class="form-group">
-                    <label>Makroskopis</label>
-                    <textarea class="form-control" placeholder="Ketik deskripsi makroskopis..."></textarea>
+                    <label>Makroskopis (Selalu diisi spesifik)</label>
+                    <textarea class="form-control">Diterima 1 buah jaringan berongga...</textarea>
                 </div>
-                <div class="form-group">
-                    <label>Mikroskopis</label>
-                    <textarea class="form-control" placeholder="Ketik deskripsi mikroskopis..."></textarea>
+
+                <div id="group3" style="display: none;">
+                    <div class="form-group">
+                        <label>Mikroskopis</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Kesimpulan</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Kesimpulan</label>
-                    <textarea class="form-control" placeholder="Ketik kesimpulan atau diagnosis akhir..."></textarea>
+
+                <div id="alert_group3" class="linked-alert" style="display: block;">
+                    Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan sediaan yang dipilih.
                 </div>
             </div>
         </div>
@@ -242,20 +298,35 @@
     </div>
 
     <script>
+        // Fungsi untuk melipat/membuka Card
         function toggleCard(bodyId, headerElement) {
             var bodyElement = document.getElementById(bodyId);
             var iconElement = headerElement.querySelector('.icon');
 
             if (bodyElement.classList.contains('show')) {
-                // Tutup card
                 bodyElement.classList.remove('show');
                 headerElement.classList.remove('active');
                 iconElement.innerText = '►';
             } else {
-                // Buka card
                 bodyElement.classList.add('show');
                 headerElement.classList.add('active');
                 iconElement.innerText = '▼';
+            }
+        }
+
+        // Fungsi untuk menyembunyikan form Mikro&Kesimpulan jika dilink
+        function handleLinkTarget(selectElement, targetGroupId) {
+            var targetGroup = document.getElementById(targetGroupId);
+            var alertBox = document.getElementById('alert_' + targetGroupId);
+
+            if (selectElement.value !== "none") {
+                // Sembunyikan form ketik, munculkan info
+                targetGroup.style.display = "none";
+                alertBox.style.display = "block";
+            } else {
+                // Kembalikan form ketik, sembunyikan info
+                targetGroup.style.display = "block";
+                alertBox.style.display = "none";
             }
         }
     </script>
