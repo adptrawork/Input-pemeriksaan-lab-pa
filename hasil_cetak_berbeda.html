@@ -72,7 +72,7 @@
         }
 
         .head-cetak-instansi {
-            font-size: 14pt;
+            font-size: 12pt;
             font-weight: bold;
             text-align: center;
             margin: 15px 0 20px 0;
@@ -85,7 +85,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 25px;
-            font-size: 10pt;
+            font-size: 9pt;
         }
 
         .table-outer td {
@@ -217,7 +217,28 @@
 
 <body>
 
-    <a href="form_input_berbeda.html" class="nav-button">← Kembali ke Form Input</a>
+    <!-- Header Navigasi -->
+    <div class="nav-container"
+        style="background-color: #1e293b; padding: 12px 20px; margin: 20px auto; max-width: 210mm; border-radius: 8px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+        <span
+            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Standar
+            (V1):</span>
+        <a href="form_input_berbeda.html"
+            style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
+        <a href="form_input_sama.html"
+            style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Sama
+            (Grouped)</a>
+        <div style="width: 1px; height: 16px; background-color: #475569; margin: 0 5px;"></div>
+        <span
+            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">ICD-O
+            (V2):</span>
+        <a href="form_input_berbeda_v2.html"
+            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2
+            Berbeda</a>
+        <a href="form_input_sama_v2.html"
+            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2
+            Sama</a>
+    </div>
     <button onclick="window.print()" class="btn-print">Cetak Dokumen</button>
 
     <div class="page-a4">
@@ -300,16 +321,27 @@
 
             <div class="section-judul">MAKROSKOPIK</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I. Esofagus:</strong> Diterima 2 keping jaringan, ukuran masing-masing 0,3 cm dan 0,4 cm, berwarna putih keabuan, konsistensi kenyal. Semua dicetak dalam 1 blok.</div>
-                <div class="item-list"><strong>II. Payudara Kanan:</strong> Diterima 1 buah jaringan berbenjol tak beraturan ukuran 4 x 3 x 2 cm. Pada pembelahan tampak penampang padat berwarna putih kecoklatan, kenyal.</div>
-                <div class="item-list"><strong>III. KGB Leher:</strong> Diterima 3 buah nodul jaringan, ukuran terbesar 1,5 cm, terkecil 0,5 cm, penampang kecoklatan.</div>
+                <div class="item-list"><strong>I. Esofagus:</strong> Diterima 2 keping jaringan, ukuran masing-masing
+                    0,3 cm dan 0,4 cm, berwarna putih keabuan, konsistensi kenyal. Semua dicetak dalam 1 blok.</div>
+                <div class="item-list"><strong>II. Payudara Kanan:</strong> Diterima 1 buah jaringan berbenjol tak
+                    beraturan ukuran 4 x 3 x 2 cm. Pada pembelahan tampak penampang padat berwarna putih kecoklatan,
+                    kenyal.</div>
+                <div class="item-list"><strong>III. KGB Leher:</strong> Diterima 3 buah nodul jaringan, ukuran terbesar
+                    1,5 cm, terkecil 0,5 cm, penampang kecoklatan.</div>
             </div>
 
             <div class="section-judul">MIKROSKOPIK</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I.</strong> Sediaan biopsi menunjukkan fragmen mukosa esofagus berlapis epitel skuamosa yang mengalami hiperplasia sel basal dan pemanjangan papila lamina propria. Tampak sebukan sel radang limfosit dan neutrofil intraepitelial. Tidak tampak sel ganas.</div>
-                <div class="item-list"><strong>II.</strong> Sediaan jaringan payudara menunjukkan proliferasi sel-sel epitel duktus yang tersusun padat, membentuk struktur cribriform dan komedo nekrosis di bagian tengah. Inti sel pleomorfik, hiperkromatik dengan aktivitas mitosis meningkat. Tampak invasi sel tumor ke stroma sekitarnya.</div>
-                <div class="item-list"><strong>III.</strong> Struktur kelenjar getah bening masih intak. Tampak folikel-folikel limfoid reaktif dengan sentrum germinativum yang melebar. Tampak sebukan sel makrofag. Tidak tampak metastasis sel tumor.</div>
+                <div class="item-list"><strong>I.</strong> Sediaan biopsi menunjukkan fragmen mukosa esofagus berlapis
+                    epitel skuamosa yang mengalami hiperplasia sel basal dan pemanjangan papila lamina propria. Tampak
+                    sebukan sel radang limfosit dan neutrofil intraepitelial. Tidak tampak sel ganas.</div>
+                <div class="item-list"><strong>II.</strong> Sediaan jaringan payudara menunjukkan proliferasi sel-sel
+                    epitel duktus yang tersusun padat, membentuk struktur cribriform dan komedo nekrosis di bagian
+                    tengah. Inti sel pleomorfik, hiperkromatik dengan aktivitas mitosis meningkat. Tampak invasi sel
+                    tumor ke stroma sekitarnya.</div>
+                <div class="item-list"><strong>III.</strong> Struktur kelenjar getah bening masih intak. Tampak
+                    folikel-folikel limfoid reaktif dengan sentrum germinativum yang melebar. Tampak sebukan sel
+                    makrofag. Tidak tampak metastasis sel tumor.</div>
             </div>
 
             <div class="section-judul">KESIMPULAN</div>
@@ -322,7 +354,8 @@
             <div class="section-judul">SARAN</div>
             <div class="section-isi">
                 <div class="item-list"><strong>I.</strong> Korelasi klinis dan endoskopi lebih lanjut.</div>
-                <div class="item-list"><strong>II.</strong> Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67) untuk penentuan terapi lanjutan.</div>
+                <div class="item-list"><strong>II.</strong> Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67)
+                    untuk penentuan terapi lanjutan.</div>
                 <div class="item-list"><strong>III.</strong> Pemantauan klinis.</div>
             </div>
         </div>

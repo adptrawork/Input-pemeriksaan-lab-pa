@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Hasil Patologi Anatomi</title>
+    <title>Input Hasil PA - V2 (ICD-O & Saran)</title>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -119,39 +119,15 @@
 
         textarea.form-control {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
 
-        /* Tampilan Khusus Fitur Link/Tautkan Hasil */
-        .link-control-box {
-            background-color: #fffbeb;
-            border: 1px solid #fde68a;
-            padding: 12px 15px;
+        .icdo-box {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            padding: 10px;
             border-radius: 6px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .link-control-box select {
-            flex: 1;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #d1d5db;
-        }
-
-        .linked-alert {
-            display: none;
-            /* Disembunyikan secara default */
-            background-color: #eff6ff;
-            border: 1px dashed #3b82f6;
-            color: #1e40af;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            font-weight: 500;
-            margin-bottom: 15px;
+            margin-top: 10px;
         }
 
         /* Tombol Aksi */
@@ -184,6 +160,9 @@
             background-color: #f1f5f9;
             color: #475569;
             border: 1px solid #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
         }
 
         .btn-secondary:hover {
@@ -194,46 +173,43 @@
 
 <body>
 
-
-
     <div class="container">
-        <!-- Header Navigasi -->
+        <!-- Universal Navigation Header -->
         <div class="nav-container" style="background-color: #1e293b; padding: 12px 20px; margin-bottom: 20px; border-radius: 8px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
             <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Standar (V1):</span>
-            <a href="form_input_berbeda.html" style="background-color: rgba(96, 165, 250, 0.2); color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: bold; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
+            <a href="form_input_berbeda.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
             <a href="form_input_sama.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Sama (Grouped)</a>
             <div style="width: 1px; height: 16px; background-color: #475569; margin: 0 5px;"></div>
             <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">ICD-O (V2):</span>
-            <a href="form_input_berbeda_v2.html" style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2 Berbeda</a>
+            <a href="form_input_berbeda_v2.html" style="background-color: rgba(251, 191, 36, 0.2); color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: bold; padding: 5px 10px; border-radius: 4px;">V2 Berbeda</a>
             <a href="form_input_sama_v2.html" style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2 Sama</a>
         </div>
-        <div class="header-title">Input Hasil Patologi Anatomi (PA)</div>
+        <div class="header-title">Input Hasil PA - V2 (Penambahan ICD-O & Saran)</div>
 
+        <!-- Sample 1 -->
         <div class="card">
             <div class="card-header active" onclick="toggleCard('body1', this)">
                 <span>I. Biopsi esofagus, gaster, colon 1-2 botol</span>
-                        <span class="icon">▼</span>
+                <span class="icon">▼</span>
             </div>
             <div class="card-body show" id="body1">
-
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" name="dokter_tujuan[0]"
-                            value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[0]" value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" name="dokter_konsul[0]" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[0]" value="dr. Udin">
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="form-group col">
-                        <label>Lokasi Jaringan</label>
-                        <input type="text" class="form-control" name="lokasi[0]" value="Esofagus">
-                    </div>
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" name="lokasi[0]" value="Esofagus">
+                </div>
+                <div class="form-group">
                     <label>Makroskopis</label>
-                    <textarea class="form-control" name="makroskopis[0]">Diterima 2 keping jaringan, ukuran masing-masing 0,3 cm dan 0,4 cm, berwarna putih keabuan, konsistensi kenyal. Semua dicetak dalam 1 blok.</textarea>
+                    <textarea class="form-control" name="makroskopis[0]">Diterima 2 keping jaringan, ukuran masing-masing 0,3 cm and 0,4 cm, berwarna putih keabuan, konsistensi kenyal. Semua dicetak dalam 1 blok.</textarea>
                 </div>
                 <div class="form-group">
                     <label>Mikroskopis</label>
@@ -243,13 +219,18 @@
                     <label>Kesimpulan</label>
                     <textarea class="form-control" name="kesimpulan[0]">Esofagitis refluks kronis eksaserbasi akut.</textarea>
                 </div>
-                <div class="form-group">
-                    <label>Saran</label>
-                    <textarea class="form-control" name="saran[0]">Korelasi klinis dan endoskopi lebih lanjut.</textarea>
+                <div class="form-group icdo-box">
+                    <label>ICD-O Code</label>
+                    <input type="text" class="form-control" name="icdo[0]" placeholder="Contoh: 8010/3 (Opsional untuk kasus non-tumor)">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Saran / Anjuran Dokter</label>
+                    <textarea class="form-control" name="saran[0]" placeholder="Tuliskan saran medis yang terpisah dari kesimpulan...">Korelasi klinis dan endoskopi lebih lanjut.</textarea>
                 </div>
             </div>
         </div>
 
+        <!-- Sample 2 -->
         <div class="card">
             <div class="card-header" onclick="toggleCard('body2', this)">
                 <span>II. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
@@ -259,25 +240,21 @@
                 <div class="row">
                     <div class="form-group col">
                         <label>Dokter Tujuan</label>
-                        <input type="text" class="form-control" name="dokter_tujuan[1]"
-                            value="dr. Betty Marlina Sinaga">
+                        <input type="text" class="form-control" name="dokter_tujuan[1]" value="dr. Betty Marlina Sinaga">
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" name="dokter_konsul[1]" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[1]" value="dr. Udin">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>Lokasi Jaringan</label>
                     <input type="text" class="form-control" name="lokasi[1]" value="Payudara Kanan">
                 </div>
-
                 <div class="form-group">
                     <label>Makroskopis</label>
                     <textarea class="form-control" name="makroskopis[1]">Diterima 1 buah jaringan berbenjol tak beraturan ukuran 4 x 3 x 2 cm. Pada pembelahan tampak penampang padat berwarna putih kecoklatan, kenyal.</textarea>
                 </div>
-
                 <div class="form-group">
                     <label>Mikroskopis</label>
                     <textarea class="form-control" name="mikroskopis[1]">Sediaan jaringan payudara menunjukkan proliferasi sel-sel epitel duktus yang tersusun padat, membentuk struktur cribriform dan komedo nekrosis di bagian tengah. Inti sel pleomorfik, hiperkromatik dengan aktivitas mitosis meningkat. Tampak invasi sel tumor ke stroma sekitarnya.</textarea>
@@ -286,13 +263,18 @@
                     <label>Kesimpulan</label>
                     <textarea class="form-control" name="kesimpulan[1]">Invasive Ductal Carcinoma, Mammae Dextra.</textarea>
                 </div>
-                <div class="form-group">
-                    <label>Saran</label>
-                    <textarea class="form-control" name="saran[1]">Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67) untuk penentuan terapi lanjutan.</textarea>
+                <div class="form-group icdo-box">
+                    <label>ICD-O Code</label>
+                    <input type="text" class="form-control" name="icdo[1]" value="8500/3" placeholder="Contoh: 8010/3">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Saran / Anjuran Dokter</label>
+                    <textarea class="form-control" name="saran[1]" placeholder="Tuliskan saran medis...">Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67) untuk penentuan terapi lanjutan.</textarea>
                 </div>
             </div>
         </div>
 
+        <!-- Sample 3 -->
         <div class="card">
             <div class="card-header" onclick="toggleCard('body3', this)">
                 <span>III. Jaringan kecil < 5 cm (< 5 cc)</span>
@@ -306,7 +288,7 @@
                     </div>
                     <div class="form-group col">
                         <label>Dokter Konsul</label>
-                        <input type="text" class="form-control" name="dokter_konsul[2]" value="dr. Udin ">
+                        <input type="text" class="form-control" name="dokter_konsul[2]" value="dr. Udin">
                     </div>
                 </div>
                 <div class="form-group">
@@ -325,22 +307,25 @@
                     <label>Kesimpulan</label>
                     <textarea class="form-control" name="kesimpulan[2]">Limfadenitis reaktif kronis.</textarea>
                 </div>
-                <div class="form-group">
-                    <label>Saran</label>
-                    <textarea class="form-control" name="saran[2]">Pemantauan klinis.</textarea>
+                <div class="form-group icdo-box">
+                    <label>ICD-O Code</label>
+                    <input type="text" class="form-control" name="icdo[2]" placeholder="Contoh: 8010/3">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Saran / Anjuran Dokter</label>
+                    <textarea class="form-control" name="saran[2]" placeholder="Tuliskan saran medis...">Pemantauan klinis.</textarea>
                 </div>
             </div>
         </div>
 
         <div class="action-buttons">
             <button class="btn btn-secondary">Batal</button>
-            <a href="hasil_cetak_berbeda.html" class="btn btn-secondary">Cetak Hasil</a>
-            <button class="btn btn-primary">Simpan</button>
+            <a href="hasil_cetak_berbeda_v2.html" class="btn btn-secondary">Preview Cetak V2</a>
+            <button class="btn btn-primary" onclick="alert('Data V2 Berhasil Disimpan!')">Simpan</button>
         </div>
     </div>
 
     <script>
-        // Fungsi untuk melipat/membuka Card
         function toggleCard(bodyId, headerElement) {
             var bodyElement = document.getElementById(bodyId);
             var iconElement = headerElement.querySelector('.icon');
@@ -353,22 +338,6 @@
                 bodyElement.classList.add('show');
                 headerElement.classList.add('active');
                 iconElement.innerText = '▼';
-            }
-        }
-
-        // Fungsi untuk menyembunyikan form Mikro&Kesimpulan jika dilink
-        function handleLinkTarget(selectElement, targetGroupId) {
-            var targetGroup = document.getElementById(targetGroupId);
-            var alertBox = document.getElementById('alert_' + targetGroupId);
-
-            if (selectElement.value !== "none") {
-                // Sembunyikan form ketik, munculkan info
-                targetGroup.style.display = "none";
-                alertBox.style.display = "block";
-            } else {
-                // Kembalikan form ketik, sembunyikan info
-                targetGroup.style.display = "block";
-                alertBox.style.display = "none";
             }
         }
     </script>

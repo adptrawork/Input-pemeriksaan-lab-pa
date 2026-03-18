@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Hasil PA - V2 Sama (ICD-O & Saran)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .card {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .card-header {
+            background-color: #f8fafc;
+            padding: 15px 20px;
+            font-weight: bold;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            transition: background-color 0.2s;
+        }
+
+        .card-header:hover { background-color: #e2e8f0; }
+        .card-header.active {
+            border-bottom: 1px solid #cbd5e1;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .card-body { padding: 20px; display: none; }
+        .card-body.show { display: block; }
+
+        .row { display: flex; gap: 20px; margin-bottom: 15px; }
+        .col { flex: 1; }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #475569;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            box-sizing: border-box;
+            background-color: #f8fafc;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        textarea.form-control { resize: vertical; min-height: 80px; }
+
+        .icdo-box {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .link-control-box {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-control-box select {
+            flex: 1;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+        }
+
+        .linked-alert {
+            display: none;
+            background-color: #eff6ff;
+            border: 1px dashed #3b82f6;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .action-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-primary { background-color: #059669; color: white; }
+        .btn-secondary { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; text-decoration: none; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Universal Navigation Header -->
+        <div class="nav-container" style="background-color: #1e293b; padding: 12px 20px; margin-bottom: 20px; border-radius: 8px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+            <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Standar (V1):</span>
+            <a href="form_input_berbeda.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
+            <a href="form_input_sama.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Sama (Grouped)</a>
+            <div style="width: 1px; height: 16px; background-color: #475569; margin: 0 5px;"></div>
+            <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">ICD-O (V2):</span>
+            <a href="form_input_berbeda_v2.html" style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2 Berbeda</a>
+            <a href="form_input_sama_v2.html" style="background-color: rgba(251, 191, 36, 0.2); color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: bold; padding: 5px 10px; border-radius: 4px;">V2 Sama</a>
+        </div>
+
+        <div class="header-title">Input Hasil PA - V2 Sama (ICD-O & Saran)</div>
+
+        <!-- Sample 1 (Master) -->
+        <div class="card">
+            <div class="card-header active" onclick="toggleCard('body1', this)">
+                <span>I. Biopsi esofagus, gaster, colon 1-2 botol</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="card-body show" id="body1">
+                <div class="row">
+                    <div class="form-group col">
+                        <label>Dokter Tujuan</label>
+                        <input type="text" class="form-control" value="dr. Betty Marlina Sinaga">
+                    </div>
+                    <div class="form-group col">
+                        <label>Dokter Konsul</label>
+                        <input type="text" class="form-control" value="dr. Andi, Sp.OG">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" value="Gaster (Antrum)">
+                </div>
+                <div class="form-group">
+                    <label>Makroskopis (Spesifik)</label>
+                    <textarea class="form-control">Diterima 3 keping jaringan keputihan, ukuran diameter 0,2 - 0,3 cm, konsistensi lunak.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Mikroskopis</label>
+                    <textarea class="form-control">Tampak fragmen mukosa gaster dengan foveola gastrika yang intak. Pada lamina propria tampak sebukan sel-sel radang limfosit, sel plasma, and beberapa neutrofil. Kelenjar-kelenjar gaster dalam batas normal. Ditemukan bentukan bakteri Helicobacter pylori pada pewarnaan rutin. Tidak tampak sel tumor ganas.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Kesimpulan</label>
+                    <textarea class="form-control">Gastritis kronis aktif terkait infeksi Helicobacter pylori.</textarea>
+                </div>
+                <div class="form-group icdo-box">
+                    <label>ICD-O Code</label>
+                    <input type="text" class="form-control" value="-" placeholder="Contoh: 8010/3">
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label>Saran / Anjuran Dokter</label>
+                    <textarea class="form-control">Terapi eradikasi H. pylori sesuai indikasi klinis.</textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleCard('body2', this)">
+                <span>II. Jaringan kecil < 5 cm (< 5 cc)</span>
+                <span class="icon">►</span>
+            </div>
+            <div class="card-body" id="body2">
+                <div class="link-control-box">
+                    <label>🔗 Samakan Hasil dengan:</label>
+                    <select onchange="handleLinkTarget(this, 'group2')">
+                        <option value="none" selected>-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1">I. Jaringan Pertama</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Makroskopis (Spesifik)</label>
+                    <textarea class="form-control">Diterima 1 keping jaringan polipoid, ukuran diameter 0,5 cm, konsistensi kenyal.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" value="Colon (Ascendens)">
+                </div>
+                <div id="group2">
+                    <div class="form-group">
+                        <label>Mikroskopis</label>
+                        <textarea class="form-control">Sediaan menunjukkan polip adenomatosa yang terdiri dari proliferasi kelenjar-kelenjar yang dilapisi epitel torak dengan inti hiperkromatik, memanjang, dan stratifikasi basal (low-grade dysplasia). Tidak ditemukan tanda keganasan invasif.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Kesimpulan</label>
+                        <textarea class="form-control">Adenoma Tubulare dengan displasia derajat rendah.</textarea>
+                    </div>
+                    <div class="form-group icdo-box">
+                        <label>ICD-O Code</label>
+                        <input type="text" class="form-control" value="8211/0">
+                    </div>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>Saran / Anjuran Dokter</label>
+                        <textarea class="form-control">Eksisi lengkap disarankan untuk pencegahan keganasan.</textarea>
+                    </div>
+                </div>
+                <div id="alert_group2" class="linked-alert">Hasil otomatis mengikuti <strong>Sediaan I</strong>.</div>
+            </div>
+        </div>
+
+        <!-- Sample 3 (Linked to I) -->
+        <div class="card">
+            <div class="card-header" onclick="toggleCard('body3', this)">
+                <span>III. Biopsi esofagus, gaster, colon 1-2 botol</span>
+                <span class="icon">►</span>
+            </div>
+            <div class="card-body" id="body3">
+                <div class="link-control-box">
+                    <label>🔗 Samakan Hasil dengan:</label>
+                    <select onchange="handleLinkTarget(this, 'group3')">
+                        <option value="none">-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1" selected>I. Jaringan Pertama</option>
+                        <option value="2">II. Jaringan Kedua</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Makroskopis (Spesifik)</label>
+                    <textarea class="form-control">Diterima 2 keping jaringan kecoklatan, ukuran diameter 0,2 - 0,4 cm, konsistensi kenyal.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" value="Gaster (Korpus)">
+                </div>
+                <div id="group3" style="display: none;">
+                    <div class="form-group"><label>Kesimpulan</label><textarea class="form-control"></textarea></div>
+                    <div class="form-group icdo-box"><label>ICD-O</label><input type="text" class="form-control"></div>
+                    <div class="form-group"><label>Saran</label><textarea class="form-control"></textarea></div>
+                </div>
+                <div id="alert_group3" class="linked-alert" style="display: block;">Hasil otomatis mengikuti <strong>Sediaan I</strong> (Grouped).</div>
+            </div>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleCard('body4', this)">
+                <span>IV. Jaringan sedang 5 - 10 cm (5 - 10 cc)</span>
+                <span class="icon">►</span>
+            </div>
+            <div class="card-body" id="body4">
+                <div class="link-control-box">
+                    <label>🔗 Samakan Hasil dengan:</label>
+                    <select onchange="handleLinkTarget(this, 'group4')">
+                        <option value="none" selected>-- Ketik Sendiri (Hasil Berbeda) --</option>
+                        <option value="1">I. Jaringan Pertama</option>
+                        <option value="2">II. Jaringan Kedua</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Makroskopis (Spesifik)</label>
+                    <textarea class="form-control">Diterima 1 buah jaringan kistik ukuran 10 x 8 x 5 cm. Permukaan luar licin, pembelahan berisi cairan jernih kekuningan.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Lokasi Jaringan</label>
+                    <input type="text" class="form-control" value="Ovarium Kanan">
+                </div>
+                <div id="group4">
+                    <div class="form-group">
+                        <label>Mikroskopis</label>
+                        <textarea class="form-control">Dinding kista dilapisi oleh selapis epitel kuboid hingga silindris bersilia (tipe tuba) yang intak tanpa adanya stratifikasi atau atipia nukleus. Stroma di bawahnya terdiri dari jaringan ikat fibrokolagen yang padat. Tidak ditemukan tanda-tanda keganasan.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Kesimpulan</label>
+                        <textarea class="form-control">Cystadenoma Serosum Ovarii, Benigna.</textarea>
+                    </div>
+                    <div class="form-group icdo-box">
+                        <label>ICD-O Code</label>
+                        <input type="text" class="form-control" value="-">
+                    </div>
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>Saran / Anjuran Dokter</label>
+                        <textarea class="form-control">Observasi klinis rutin disarankan.</textarea>
+                    </div>
+                </div>
+                <div id="alert_group4" class="linked-alert">Hasil otomatis mengikuti sediaan yang dipilih.</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-secondary">Batal</button>
+            <a href="hasil_cetak_sama_v2.html" class="btn btn-secondary" style="display: flex; align-items: center; padding: 0 20px;">Preview Cetak V2</a>
+            <button class="btn btn-primary" onclick="alert('Data V2 Berhasil Disimpan!')">Simpan Data V2</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard(bodyId, headerElement) {
+            var bodyElement = document.getElementById(bodyId);
+            var iconElement = headerElement.querySelector('.icon');
+            if (bodyElement.classList.contains('show')) {
+                bodyElement.classList.remove('show');
+                headerElement.classList.remove('active');
+                iconElement.innerText = '►';
+            } else {
+                bodyElement.classList.add('show');
+                headerElement.classList.add('active');
+                iconElement.innerText = '▼';
+            }
+        }
+
+        function handleLinkTarget(selectElement, targetGroupId) {
+            var targetGroup = document.getElementById(targetGroupId);
+            var alertBox = document.getElementById('alert_' + targetGroupId);
+            if (selectElement.value !== "none") {
+                targetGroup.style.display = "none";
+                alertBox.style.display = "block";
+            } else {
+                targetGroup.style.display = "block";
+                alertBox.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
