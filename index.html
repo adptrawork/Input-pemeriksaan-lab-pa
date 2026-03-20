@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Lab PA - RSUD H. Abdul Manap</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        :root {
+            --primary: #1e293b;
+            --primary-light: #334155;
+            --accent-v1: #3b82f6;
+            --accent-v2: #fbbf24;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            height: 100px;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        p.subtitle {
+            color: #94a3b8;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: -40px auto 40px;
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .section-title {
+            grid-column: 1 / -1;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card.v1:hover { border-color: var(--accent-v1); }
+        .card.v2:hover { border-color: var(--accent-v2); }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .tag-v1 { background: rgba(59, 130, 246, 0.1); color: var(--accent-v1); }
+        .tag-v2 { background: rgba(251, 191, 36, 0.1); color: #d97706; }
+
+        .card-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 24px;
+            opacity: 0.1;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .card-icon {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .btn-portal {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #f1f5f9;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 13px;
+            transition: background 0.2s;
+            margin-top: 20px;
+        }
+
+        .card:hover .btn-portal {
+            background: #e2e8f0;
+        }
+
+        /* Glassmorphism background for header */
+        .glass-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="glass-overlay"></div>
+        <div class="logo-container">
+            <img src="http://103.147.236.140/assets/images/logo/Kota%20Jambi.png" alt="Logo Kota Jambi">
+        </div>
+        <h1>Laboratorium Patologi Anatomi</h1>
+        <p class="subtitle">Sistem Informasi Manajemen Rumah Sakit (SIMRS) RSUD H. Abdul Manap</p>
+    </header>
+
+    <main>
+        <div class="grid">
+            <!-- V1 Section -->
+            <div class="section-title">Metode Standar (V1)</div>
+
+            <a href="form_input_berbeda.html" class="card v1">
+                <div class="tag tag-v1">Standard V1</div>
+                <div class="card-icon">📄</div>
+                <h2>Hasil Berbeda</h2>
+                <p>Formulir input untuk pemeriksaan dengan hasil yang berbeda pada setiap sampel jaringan.</p>
+                <div class="btn-portal">Buka Formulir ⮕</div>
+            </a>
+
+            <a href="form_input_sama.html" class="card v1">
+                <div class="tag tag-v1">Standard V1</div>
+                <div class="card-icon">📚</div>
+                <h2>Hasil Sama (Grouped)</h2>
+                <p>Formulir input dengan fitur pengelompokan hasil otomatis (Grouping) untuk sampel yang serupa.</p>
+                <div class="btn-portal">Buka Formulir ⮕</div>
+            </a>
+
+            <!-- V2 Section -->
+            <div class="section-title">Metode ICD-O & Saran (V2)</div>
+
+            <a href="form_input_berbeda_v2.html" class="card v2">
+                <div class="tag tag-v2">Specialized V2</div>
+                <div class="card-icon">🧬</div>
+                <h2>V2 Hasil Berbeda</h2>
+                <p>Dilengkapi kolom Klasifikasi Onkologi (ICD-O) dan pemisahan kolom Saran Medis.</p>
+                <div class="btn-portal" style="color: #d97706;">Buka Formulir ⮕</div>
+            </a>
+
+            <a href="form_input_sama_v2.html" class="card v2">
+                <div class="tag tag-v2">Specialized V2</div>
+                <div class="card-icon">🔬</div>
+                <h2>V2 Hasil Sama (Grouped)</h2>
+                <p>Fitur Grouping lengkap dengan kolom ICD-O dan Saran untuk efisiensi pelaporan kasus kanker.</p>
+                <div class="btn-portal" style="color: #d97706;">Buka Formulir ⮕</div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 RSUD H. Abdul Manap Kota Jambi. Dikembangkan untuk efisiensi diagnosis Patologi Anatomi.
+    </footer>
+</body>
+
+</html>
