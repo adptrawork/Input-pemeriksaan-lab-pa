@@ -142,13 +142,62 @@
 </head>
 
 <body class="bg-surface text-on-surface min-h-screen flex overflow-hidden">
+    <aside class="hidden md:flex flex-col h-screen w-64 bg-slate-50 border-r-0 p-4 space-y-2 shrink-0">
+        <div class="px-2 py-6 mb-4">
+            <h1 class="text-lg font-black text-teal-900">MORBIS</h1>
+            <p class="text-xs font-medium text-slate-500 uppercase tracking-widest">RS Abdul Manap</p>
+        </div>
+        <nav class="flex-1 space-y-1 overflow-y-auto no-scrollbar">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                <span class="font-sans font-medium text-sm">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 bg-white text-teal-700 shadow-sm rounded-lg font-semibold cursor-pointer"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="personal_injury">personal_injury</span>
+                <span class="font-sans font-medium text-sm">Patient Records</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+                <span class="font-sans font-medium text-sm">Laboratory</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="microscopy">microbiology</span>
+                <span class="font-sans font-medium text-sm">Pathology</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                <span class="font-sans font-medium text-sm">Settings</span>
+            </a>
+        </nav>
+        <div class="mt-auto pt-6 border-t border-slate-200/50 space-y-1">
+            <button
+                class="w-full flex items-center justify-center gap-2 py-3 bg-teal-700 text-white rounded-lg font-bold text-sm shadow-md hover:bg-teal-800 transition-colors mb-4">
+                <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Examination
+            </button>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 transition-all rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                <span class="font-sans font-medium text-sm">Support</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 transition-all rounded-lg"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                <span class="font-sans font-medium text-sm">Logout</span>
+            </a>
+        </div>
+    </aside>
     <!-- Main Content Area -->
-    <div class="flex-1 flex flex-col h-screen overflow-hidden relative">
+    <div class="flex-1 flex flex-col h-screen overflow-hidden relative py-6">
         <!-- TopAppBar -->
         <header class="flex items-center justify-between px-6 py-3 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
             <div class="flex items-center gap-4">
-                <span class="text-xl font-bold tracking-tight text-teal-800">RS Manap</span>
-                <div class="h-6 w-px bg-slate-200 mx-2"></div>
+
                 <h2 class="text-on-secondary-fixed font-semibold">Input Hasil Patologi</h2>
             </div>
             <div class="flex items-center gap-4">
@@ -175,7 +224,7 @@
         </header>
 
         <!-- Main Form Canvas -->
-        <main class="flex-1 overflow-y-auto p-8 bg-surface-bright space-y-8 no-scrollbar pt-20">
+        <main class="flex-1 overflow-y-auto p-8 bg-surface-bright space-y-8 no-scrollbar">
             <!-- Bento Layout Container -->
             <div class="max-w-7xl mx-auto space-y-8">
                 <!-- Section 1 & 2 Grid -->
@@ -415,7 +464,8 @@
                                                 class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
                                                 rows="2">Tampak sel-sel epitel...</textarea>
                                             <div class="linked-alert" data-alert="mikro">
-                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan opsi yang dipilih.
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
                                             </div>
                                         </div>
                                     </td>
@@ -425,7 +475,8 @@
                                                 class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
                                                 rows="2">Normal</textarea>
                                             <div class="linked-alert" data-alert="kesimpulan">
-                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan opsi yang dipilih.
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
                                             </div>
                                         </div>
                                     </td>
@@ -475,7 +526,8 @@
                                                 class="w-full min-w-[200px] bg-surface-container-lowest border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
                                                 rows="2">Sediaan menunjukkan...</textarea>
                                             <div class="linked-alert" data-alert="mikro">
-                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan opsi yang dipilih.
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
                                             </div>
                                         </div>
                                     </td>
@@ -485,7 +537,8 @@
                                                 class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
                                                 rows="2">Karsinoma</textarea>
                                             <div class="linked-alert" data-alert="kesimpulan">
-                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan opsi yang dipilih.
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
                                             </div>
                                         </div>
                                     </td>
@@ -537,7 +590,8 @@
                                                 class="w-full min-w-[200px] bg-surface-container-lowest border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
                                                 rows="2">Menunggu proses...</textarea>
                                             <div class="linked-alert" data-alert="mikro">
-                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan opsi yang dipilih.
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
                                             </div>
                                         </div>
                                     </td>
@@ -547,7 +601,8 @@
                                                 class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
                                                 rows="2">Menunggu proses...</textarea>
                                             <div class="linked-alert" data-alert="kesimpulan">
-                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan opsi yang dipilih.
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
                                             </div>
                                         </div>
                                     </td>
@@ -625,14 +680,14 @@
             var $select = $(selectElement);
             var $row = $select.closest('tr');
             var table = $('#pemeriksaanTable').DataTable();
-            
+
             if ($row.hasClass('child')) {
                 $row = $row.prev();
             }
-            
+
             var dtRow = table.row($row);
             var $allNodes = $($row).add(dtRow.child());
-            
+
             // Pilih semua textarea dan alert box dalam baris ini
             var $mikroText = $allNodes.find('textarea[data-field="mikro"]');
             var $kesimpulanText = $allNodes.find('textarea[data-field="kesimpulan"]');
