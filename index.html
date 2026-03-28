@@ -9,14 +9,15 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
         :root {
-            --primary: #1e293b;
-            --primary-light: #334155;
+            --primary: #006565;
+            --primary-light: #008080;
             --accent-v1: #3b82f6;
-            --accent-v2: #fbbf24;
-            --bg: #f8fafc;
+            --accent-v2: #f59e0b;
+            --bg: #f1f5f9;
             --card-bg: #ffffff;
             --text-main: #0f172a;
             --text-muted: #64748b;
+            --teal-dark: #004f4f;
         }
 
         body {
@@ -35,7 +36,7 @@
             color: white;
             padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 101, 101, 0.15);
         }
 
         .logo-container {
@@ -117,11 +118,13 @@
         }
 
         .card.v1:hover {
-            border-color: var(--accent-v1);
+            border-color: var(--primary-light);
+            box-shadow: 0 8px 20px -5px rgba(0, 101, 101, 0.15), 0 4px 8px -5px rgba(0, 101, 101, 0.06);
         }
 
         .card.v2:hover {
             border-color: var(--accent-v2);
+            box-shadow: 0 8px 20px -5px rgba(245, 158, 11, 0.15), 0 4px 8px -5px rgba(245, 158, 11, 0.06);
         }
 
         .card h2 {
@@ -148,13 +151,13 @@
         }
 
         .tag-v1 {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent-v1);
+            background: rgba(0, 101, 101, 0.1);
+            color: var(--teal-dark);
         }
 
         .tag-v2 {
-            background: rgba(251, 191, 36, 0.1);
-            color: #d97706;
+            background: rgba(245, 158, 11, 0.1);
+            color: #b45309;
         }
 
         .card-icon {
@@ -183,18 +186,18 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px;
-            border-radius: 6px;
-            background: #f1f5f9;
-            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #f0fdf4;
+            color: var(--teal-dark);
             font-weight: bold;
             font-size: 13px;
-            transition: background 0.2s;
+            transition: all 0.2s;
             margin-top: 20px;
         }
 
         .card:hover .btn-portal {
-            background: #e2e8f0;
+            background: #ccfbf1;
         }
 
         /* Glassmorphism background for header */
@@ -222,42 +225,58 @@
 
     <main>
         <div class="grid">
-            <!-- V1 Section -->
-            <div class="section-title">Metode Standar (V1)</div>
+            <!-- Input Forms Section -->
+            <div class="section-title">Formulir Input Hasil PA</div>
 
             <a href="form_input_pa_beda.html" class="card v1">
-                <div class="tag tag-v1">Standard V1</div>
+                <div class="tag tag-v1">Input</div>
                 <div class="card-icon">📄</div>
-                <h2>Hasil Berbeda</h2>
+                <h2>Form Input Hasil Berbeda</h2>
                 <p>Formulir input untuk pemeriksaan dengan hasil yang berbeda pada setiap sampel jaringan.</p>
                 <div class="btn-portal">Buka Formulir ⮕</div>
             </a>
 
             <a href="form_input_pa_sama.html" class="card v1">
-                <div class="tag tag-v1">Standard V1</div>
+                <div class="tag tag-v1">Input</div>
                 <div class="card-icon">📚</div>
-                <h2>Hasil Sama (Grouped)</h2>
+                <h2>Form Input Hasil Sama</h2>
                 <p>Formulir input dengan fitur pengelompokan hasil otomatis (Grouping) untuk sampel yang serupa.</p>
                 <div class="btn-portal">Buka Formulir ⮕</div>
             </a>
 
-            <!-- V2 Section -->
+            <a href="form_input_1_sediaan.html" class="card v1">
+                <div class="tag tag-v1">Input</div>
+                <div class="card-icon">📋</div>
+                <h2>Form jika ICD-0 tidak ada</h2>
+                <p>Formulir input khusus untuk pemeriksaan tunggal atau tanpa kode ICD-0.</p>
+                <div class="btn-portal">Buka Formulir ⮕</div>
+            </a>
+
+            <!-- Print Results Section -->
             <div class="section-title">Cetak Hasil Pemeriksaan</div>
 
             <a href="hasil_cetak_berbeda_v2.html" class="card v2">
-                <div class="tag tag-v2">Cetak V2</div>
+                <div class="tag tag-v2">Cetak</div>
                 <div class="card-icon">🧬</div>
                 <h2>Cetak Hasil Berbeda</h2>
                 <p>Cetak laporan hasil pemeriksaan dengan setiap sampel memiliki hasil yang berbeda.</p>
-                <div class="btn-portal" style="color: #d97706;">Cetak Hasil ⮕</div>
+                <div class="btn-portal" style="color: #b45309;">Cetak Hasil ⮕</div>
             </a>
 
             <a href="hasil_cetak_sama_v2.html" class="card v2">
-                <div class="tag tag-v2">Cetak V2</div>
+                <div class="tag tag-v2">Cetak</div>
                 <div class="card-icon">🔬</div>
-                <h2>Cetak Hasil Sama (Grouped)</h2>
+                <h2>Cetak Hasil Sama</h2>
                 <p>Cetak laporan hasil pemeriksaan dengan fitur pengelompokan untuk sampel yang serupa.</p>
-                <div class="btn-portal" style="color: #d97706;">Cetak Hasil ⮕</div>
+                <div class="btn-portal" style="color: #b45309;">Cetak Hasil ⮕</div>
+            </a>
+
+            <a href="hasil_cetak_1_sediaan.html" class="card v2">
+                <div class="tag tag-v2">Cetak</div>
+                <div class="card-icon">📄</div>
+                <h2>Cetak Hasil 1 Sediaan</h2>
+                <p>Cetak laporan hasil pemeriksaan untuk kasus tunggal atau tanpa ICD-0.</p>
+                <div class="btn-portal" style="color: #b45309;">Cetak Hasil ⮕</div>
             </a>
         </div>
     </main>

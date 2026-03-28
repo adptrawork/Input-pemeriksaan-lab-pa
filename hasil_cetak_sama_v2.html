@@ -192,7 +192,8 @@
 
             .nav-container,
             .nav-button,
-            .btn-print {
+            .btn-print,
+            .btn-back {
                 display: none !important;
             }
         }
@@ -232,11 +233,35 @@
         .btn-print:hover {
             background: #0f172a;
         }
+
+        .btn-back {
+            position: fixed;
+            top: 20px;
+            right: 170px;
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-back:hover {
+            background: #475569;
+        }
     </style>
 </head>
 
 <body>
 
+    <a href="form_input_pa_sama.html" class="btn-back">Kembali</a>
     <button onclick="window.print()" class="btn-print">Cetak Dokumen</button>
 
     <div class="page-a4">
@@ -396,7 +421,7 @@
             <div class="ttd-box">
                 <p>Terima kasih atas kepercayaan sejawat,</p>
                 <p>Jambi, 19 Maret 2026</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=dr.Betty_SpPA"
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=dr.Betty_SpPA"
                     alt="QR Code TTD">
                 <p style="font-weight: bold; margin-bottom: 0;">(dr. Betty Marlina Sinaga, Sp. PA, M.Kes)</p>
                 <p style="margin-top: 2px;">NIP.198008192006042006</p>
