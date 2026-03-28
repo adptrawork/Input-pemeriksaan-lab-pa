@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -q sample_hasil_lab_pa.docx -d temp_docx)",
+      "Bash(cd:*)"
+    ]
+  }
+}
