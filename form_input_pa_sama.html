@@ -147,32 +147,35 @@
             <h1 class="text-lg font-black text-teal-900">MORBIS</h1>
             <p class="text-xs font-medium text-slate-500 uppercase tracking-widest">RS Abdul Manap</p>
         </div>
-        <nav class="flex-1 space-y-1 overflow-y-auto no-scrollbar">
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                <span class="font-sans font-medium text-sm">Dashboard</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-3 bg-white text-teal-700 shadow-sm rounded-lg font-semibold cursor-pointer"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="personal_injury">personal_injury</span>
-                <span class="font-sans font-medium text-sm">Patient Records</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="biotech">biotech</span>
-                <span class="font-sans font-medium text-sm">Laboratory</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="microscopy">microbiology</span>
-                <span class="font-sans font-medium text-sm">Pathology</span>
-            </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 hover:translate-x-1 transition-all duration-200 cursor-pointer rounded-lg"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="settings">settings</span>
-                <span class="font-sans font-medium text-sm">Settings</span>
-            </a>
+        <nav class="flex-1 space-y-1 overflow-y-auto no-scrollbar pt-4">
+            <div class="px-2 mb-2">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">Pemeriksaan PA</p>
+                <div class="space-y-1">
+                    <a href="form_input_pa_beda.html"
+                        class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 transition-all rounded-lg text-sm group">
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-hover:text-teal-600 transition-colors">description</span>
+                        <span class="font-medium">Standard: Berbeda</span>
+                    </a>
+                    <a href="form_input_pa_sama.html"
+                        class="flex items-center gap-3 px-4 py-3 bg-teal-50 text-teal-700 transition-all rounded-lg text-sm group">
+                        <span class="material-symbols-outlined text-teal-600 transition-colors">layers</span>
+                        <span class="font-medium">Form: Sama (Grouped)</span>
+                    </a>
+                    <a href="hasil_cetak_berbeda_v2.html"
+                        class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 transition-all rounded-lg text-sm group">
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-hover:text-amber-600 transition-colors">clinical_notes</span>
+                        <span class="font-medium">Cetak: Berbeda</span>
+                    </a>
+                    <a href="hasil_cetak_sama_v2.html"
+                        class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-200/50 transition-all rounded-lg text-sm group">
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-hover:text-amber-600 transition-colors">table_rows</span>
+                        <span class="font-medium">Cetak: Sama</span>
+                    </a>
+                </div>
+            </div>
         </nav>
         <div class="mt-auto pt-6 border-t border-slate-200/50 space-y-1">
             <button
@@ -244,14 +247,14 @@
                                 <label
                                     class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tanggal
                                     Permintaan</label>
-                                <p class="text-on-surface font-semibold text-md">27-03-2026 20:55:22</p>
+                                <p class="text-on-surface font-semibold text-md">19-03-2026</p>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <label
                                         class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">No.
                                         Lab</label>
-                                    <p class="font-bold text-xl">153412</p>
+                                    <p class="font-bold text-md">334455</p>
                                 </div>
                                 <div>
                                     <label
@@ -264,8 +267,8 @@
                                 <label
                                     class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nama
                                     Pasien</label>
-                                <p class="text-teal-700 text-on-secondary-fixed font-extrabold text-xl tracking-tight">
-                                    SRIWARDHANI
+                                <p class="text-teal-700 text-on-secondary-fixed font-extrabold text-md tracking-tight">
+                                    NY. RINA MELATI
                                 </p>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
@@ -292,7 +295,7 @@
                                 </label>
                                 <textarea
                                     class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none resize-none"
-                                    rows="3">JL SUNAN KALIJAGA RT 15</textarea>
+                                    rows="4">JL SUNAN KALIJAGA RT 15</textarea>
                             </div>
                         </div>
                     </section>
@@ -315,7 +318,7 @@
                                     </label>
                                     <input
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none"
-                                        type="date" />
+                                        type="date" value="2026-03-19" />
                                 </div>
                                 <div>
                                     <label
@@ -323,7 +326,7 @@
                                         Pengirim Luar RS</label>
                                     <input
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none"
-                                        placeholder="Nama dokter pengirim..." type="text" />
+                                        placeholder="Nama dokter pengirim..." type="text" value="dr. Andi, Sp.OG" />
                                 </div>
                                 <div>
                                     <label
@@ -331,14 +334,15 @@
                                         PA</label>
                                     <input
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none"
-                                        placeholder="Contoh: PA-2026-001" type="text" />
+                                        placeholder="Contoh: PA-2026-001" type="text" value="260410/1/H" />
                                 </div>
                                 <div>
                                     <label
                                         class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Lokasi</label>
                                     <textarea
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none resize-none"
-                                        placeholder="Masukkan lokasi..." rows="3"></textarea>
+                                        placeholder="Masukkan lokasi..."
+                                        rows="4">Gaster (Antrum), Colon (Ascendens), Gaster (Korpus), Ovarium Kanan</textarea>
                                 </div>
                                 <div>
                                     <label
@@ -346,7 +350,8 @@
                                         Klinis</label>
                                     <textarea
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none resize-none"
-                                        placeholder="Masukkan keterangan klinis..." rows="3"></textarea>
+                                        placeholder="Masukkan keterangan klinis..."
+                                        rows="4">Gastritis & Kista Ovarium</textarea>
                                 </div>
                             </div>
                             <!-- Column 2 -->
@@ -357,7 +362,8 @@
                                         Rumah sakit</label>
                                     <input
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none"
-                                        placeholder="Nama rumah sakit pengirim..." type="text" />
+                                        placeholder="Nama rumah sakit pengirim..." type="text"
+                                        value="RSUD H. ABDUL MANAP" />
                                 </div>
                                 <div>
                                     <label
@@ -365,14 +371,16 @@
                                         Hasil</label>
                                     <input
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none"
-                                        type="date" />
+                                        type="date" value="2026-03-19" />
                                 </div>
                                 <div>
                                     <label
-                                        class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">ICD-0</label>
+                                        class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">
+                                        ICD-0</label>
                                     <input
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none"
-                                        placeholder="Kode ICD-0..." type="text" />
+                                        placeholder="Contoh: PA-2026-001" type="text"
+                                        value="8500/3 (Infiltrating duct carcinoma, NOS)" />
                                 </div>
                                 <div>
                                     <label
@@ -380,14 +388,16 @@
                                         Peroleh</label>
                                     <textarea
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none resize-none"
-                                        placeholder="Masukkan cara peroleh..." rows="3"></textarea>
+                                        placeholder="Masukkan cara peroleh..." rows="4">Operasi</textarea>
                                 </div>
                                 <div>
                                     <label
                                         class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Saran</label>
                                     <textarea
                                         class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 transition-all outline-none resize-none"
-                                        placeholder="Masukkan saran..." rows="3"></textarea>
+                                        placeholder="Masukkan saran..." rows="4">- Terapi eradikasi H. pylori sesuai indikasi klinis.
+- Eksisi lengkap disarankan untuk pencegahan keganasan.
+- Observasi klinis rutin disarankan.</textarea>
                                 </div>
                             </div>
                         </div>
@@ -401,6 +411,7 @@
                         <span
                             class="px-4 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-full uppercase tracking-widest">Data
                             Pemeriksaan</span>
+                        <span class="text-xs text-on-surface-variant font-medium">Total: 5 sampel</span>
                     </div>
                     <div class="overflow-x-auto">
                         <table id="pemeriksaanTable" class="w-full text-left border-collapse display nowrap"
@@ -420,12 +431,11 @@
                                 </tr>
                             </thead>
                             <tbody class="text-sm font-medium">
-                                <!-- Row 1 -->
+                                <!-- Row 1: Gaster (Antrum) - Source -->
                                 <tr class="bg-surface-container-lowest hover:bg-teal-50/30 transition-colors">
-                                    <td class="px-6 py-5 text-on-surface-variant align-center">
-                                        1
-                                    </td>
-                                    <td class="px-6 py-5 text-on-secondary-fixed font-bold align-center">Glukosa Sewaktu
+                                    <td class="px-6 py-5 text-on-surface-variant align-center">1</td>
+                                    <td class="px-6 py-5 text-on-secondary-fixed font-bold align-center">
+                                        <div>Biopsi esofagus, gaster, colon 1-2 botol</div>
                                     </td>
                                     <td class="px-6 py-5 text-on-surface-variant align-center">
                                         <select
@@ -445,24 +455,24 @@
                                         <select
                                             class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
                                             <option value="">— Pilih Dokter —</option>
-                                            <option>Dr. Budiman, Sp.PD</option>
+                                            <option selected>dr. Andi, Sp.OG</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <input
                                             class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
-                                            type="text" value="Hepar (Lobus Kanan)" />
+                                            type="text" value="Gaster (Antrum)" />
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <textarea
                                             class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
-                                            rows="2">Jaringan warna kecoklatan...</textarea>
+                                            rows="4">Diterima 3 keping jaringan keputihan, ukuran diameter 0,2 - 0,3 cm, konsistensi lunak.</textarea>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <div class="textarea-wrapper">
                                             <textarea data-field="mikro"
                                                 class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
-                                                rows="2">Tampak sel-sel epitel...</textarea>
+                                                rows="4">Tampak fragmen mukosa gaster dengan foveola gastrika yang intak. Pada lamina propria tampak sebukan sel-sel radang limfosit, sel plasma, dan beberapa neutrofil. Kelenjar-kelenjar gaster dalam batas normal. Ditemukan bentukan bakteri Helicobacter pylori pada pewarnaan rutin. Tidak tampak sel tumor ganas.</textarea>
                                             <div class="linked-alert" data-alert="mikro">
                                                 Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
                                                 opsi yang dipilih.
@@ -473,7 +483,7 @@
                                         <div class="textarea-wrapper">
                                             <textarea data-field="kesimpulan"
                                                 class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
-                                                rows="2">Normal</textarea>
+                                                rows="4">Gastritis kronis aktif terkait infeksi Helicobacter pylori.</textarea>
                                             <div class="linked-alert" data-alert="kesimpulan">
                                                 Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
                                                 opsi yang dipilih.
@@ -482,49 +492,49 @@
                                     </td>
                                 </tr>
 
-                                <!-- Row 2 -->
+                                <!-- Row 2: Colon (Ascendens) - Independent -->
                                 <tr class="bg-surface-container-low hover:bg-teal-50/30 transition-colors">
                                     <td class="px-6 py-5 text-on-surface-variant align-center">2</td>
                                     <td class="px-6 py-5 text-on-secondary-fixed font-bold align-center">
-                                        <div>Patologi Anatomi Jaringan Sedang</div>
+                                        <div>Biopsi esofagus, gaster, colon 1-2 botol</div>
                                     </td>
                                     <td class="px-6 py-5 text-on-surface-variant align-center">
                                         <select
                                             class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
                                             onchange="handleLinkTarget(this)">
-                                            <option value="none">-- Ketik Sendiri --</option>
-                                            <option value="1">1. Glukosa Sewaktu</option>
+                                            <option value="none" selected>-- Ketik Sendiri --</option>
+                                            <option value="1">1. Gaster (Antrum)</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <select
-                                            class="w-full min-w-[150px] bg-surface-container-lowest border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
                                             <option>Dr. Arisandi, Sp.PA</option>
                                             <option>Dr. Budi, Sp.PA</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <select
-                                            class="w-full min-w-[150px] bg-surface-container-lowest border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
                                             <option value="">— Pilih Dokter —</option>
-                                            <option selected>Dr. Budiman, Sp.PD</option>
+                                            <option selected>dr. Andi, Sp.OG</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <input
-                                            class="w-full min-w-[150px] bg-surface-container-lowest border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
-                                            type="text" value="Kulit Abdomen" />
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
+                                            type="text" value="Colon (Ascendens)" />
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <textarea
-                                            class="w-full min-w-[200px] bg-surface-container-lowest border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
-                                            rows="2">Diterima 1 pot jaringan...</textarea>
+                                            class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
+                                            rows="4">Diterima 1 keping jaringan polipoid, ukuran diameter 0,5 cm, konsistensi kenyal.</textarea>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <div class="textarea-wrapper">
                                             <textarea data-field="mikro"
-                                                class="w-full min-w-[200px] bg-surface-container-lowest border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
-                                                rows="2">Sediaan menunjukkan...</textarea>
+                                                class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
+                                                rows="4">Sediaan menunjukkan polip adenomatosa yang terdiri dari proliferasi kelenjar-kelenjar yang dilapisi epitel torak dengan inti hiperkromatik, memanjang, dan stratifikasi basal (low-grade dysplasia). Tidak ditemukan tanda keganasan invasif.</textarea>
                                             <div class="linked-alert" data-alert="mikro">
                                                 Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
                                                 opsi yang dipilih.
@@ -535,7 +545,7 @@
                                         <div class="textarea-wrapper">
                                             <textarea data-field="kesimpulan"
                                                 class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
-                                                rows="2">Karsinoma</textarea>
+                                                rows="4">Adenoma Tubulare dengan displasia derajat rendah.</textarea>
                                             <div class="linked-alert" data-alert="kesimpulan">
                                                 Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
                                                 opsi yang dipilih.
@@ -544,51 +554,51 @@
                                     </td>
                                 </tr>
 
-                                <!-- Row 3: Baris Tambahan yang Langsung Mengikuti Baris 1 -->
+                                <!-- Row 3: Gaster (Korpus) - Linked to Row 1 -->
                                 <tr class="bg-surface-container-lowest hover:bg-teal-50/30 transition-colors">
                                     <td class="px-6 py-5 text-on-surface-variant align-center">3</td>
                                     <td class="px-6 py-5 text-on-secondary-fixed font-bold align-center">
-                                        <div>Imunohistokimia</div>
+                                        <div>Biopsi esofagus, gaster, colon 1-2 botol</div>
                                     </td>
                                     <td class="px-6 py-5 text-on-surface-variant align-center">
-                                        <!-- Secara default dropdown ini telah memilih opsi "1. Glukosa Sewaktu" -->
                                         <select
                                             class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
                                             onchange="handleLinkTarget(this)">
                                             <option value="none">-- Ketik Sendiri --</option>
-                                            <option value="1" selected>1. Glukosa Sewaktu</option>
-                                            <option value="2">2. Patologi Anatomi Jaringan Sedang</option>
+                                            <option value="1" selected>1. Biopsi esofagus, gaster, colon 1-2 botol
+                                            </option>
+                                            <option value="2">2. Biopsi esofagus, gaster, colon 1-2 botol</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <select
-                                            class="w-full min-w-[150px] bg-surface-container-lowest border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
                                             <option>Dr. Arisandi, Sp.PA</option>
-                                            <option selected>Dr. Budi, Sp.PA</option>
+                                            <option>Dr. Budi, Sp.PA</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <select
-                                            class="w-full min-w-[150px] bg-surface-container-lowest border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
                                             <option value="">— Pilih Dokter —</option>
-                                            <option selected>Dr. Budiman, Sp.PD</option>
+                                            <option selected>dr. Andi, Sp.OG</option>
                                         </select>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <input
-                                            class="w-full min-w-[150px] bg-surface-container-lowest border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
-                                            type="text" value="Jaringan Lunak" />
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
+                                            type="text" value="Gaster (Korpus)" />
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <textarea
-                                            class="w-full min-w-[200px] bg-surface-container-lowest border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
-                                            rows="2">Diterima blok parafin...</textarea>
+                                            class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
+                                            rows="4">Diterima 2 keping jaringan kecoklatan, ukuran diameter 0,2 - 0,4 cm, konsistensi kenyal.</textarea>
                                     </td>
                                     <td class="px-6 py-5 align-center">
                                         <div class="textarea-wrapper">
                                             <textarea data-field="mikro"
-                                                class="w-full min-w-[200px] bg-surface-container-lowest border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
-                                                rows="2">Menunggu proses...</textarea>
+                                                class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
+                                                rows="4">Tampak fragmen mukosa gaster dengan foveola gastrika yang intak. Pada lamina propria tampak sebukan sel-sel radang limfosit, sel plasma, dan beberapa neutrofil. Kelenjar-kelenjar gaster dalam batas normal. Ditemukan bentukan bakteri Helicobacter pylori pada pewarnaan rutin. Tidak tampak sel tumor ganas.</textarea>
                                             <div class="linked-alert" data-alert="mikro">
                                                 Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
                                                 opsi yang dipilih.
@@ -599,7 +609,132 @@
                                         <div class="textarea-wrapper">
                                             <textarea data-field="kesimpulan"
                                                 class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
-                                                rows="2">Menunggu proses...</textarea>
+                                                rows="4">Gastritis kronis aktif terkait infeksi Helicobacter pylori.</textarea>
+                                            <div class="linked-alert" data-alert="kesimpulan">
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 4: Ovarium Kanan - Independent -->
+                                <tr class="bg-surface-container-low hover:bg-teal-50/30 transition-colors">
+                                    <td class="px-6 py-5 text-on-surface-variant align-center">4</td>
+                                    <td class="px-6 py-5 text-on-secondary-fixed font-bold align-center">
+                                        <div>Jaringan besar &gt; 10 cm (&gt; 10 cc) atau 2 lokasi yang berbeda</div>
+                                    </td>
+                                    <td class="px-6 py-5 text-on-surface-variant align-center">
+                                        <select
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
+                                            onchange="handleLinkTarget(this)">
+                                            <option value="none" selected>-- Ketik Sendiri --</option>
+                                            <option value="1">1. Biopsi esofagus, gaster, colon 1-2 botol</option>
+                                            <option value="2">2. Biopsi esofagus, gaster, colon 1-2 botol</option>
+                                            <option value="3">3. Biopsi esofagus, gaster, colon 1-2 botol</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <select
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            <option>Dr. Arisandi, Sp.PA</option>
+                                            <option>Dr. Budi, Sp.PA</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <select
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            <option value="">— Pilih Dokter —</option>
+                                            <option selected>dr. Andi, Sp.OG</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <input
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
+                                            type="text" value="Ovarium Kanan" />
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <textarea
+                                            class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
+                                            rows="4">Diterima 1 buah jaringan kistik ukuran 10 x 8 x 5 cm. Permukaan luar licin, pembelahan berisi cairan jernih kekuningan.</textarea>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <div class="textarea-wrapper">
+                                            <textarea data-field="mikro"
+                                                class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
+                                                rows="4">Dinding kista dilapisi oleh selapis epitel kuboid hingga silindris bersilia (tipe tuba) yang intak tanpa adanya stratifikasi atau atipia nukleus. Stroma di bawahnya terdiri dari jaringan ikat fibrokolagen yang padat. Tidak ditemukan tanda-tanda keganasan.</textarea>
+                                            <div class="linked-alert" data-alert="mikro">
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <div class="textarea-wrapper">
+                                            <textarea data-field="kesimpulan"
+                                                class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
+                                                rows="4">Cystadenoma Serosum Ovarii, Benigna.</textarea>
+                                            <div class="linked-alert" data-alert="kesimpulan">
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 5: Jaringan kecil < 5 cc - Independent -->
+                                <tr class="bg-surface-container-lowest hover:bg-teal-50/30 transition-colors">
+                                    <td class="px-6 py-5 text-on-surface-variant align-center">5</td>
+                                    <td class="px-6 py-5 text-on-secondary-fixed font-bold align-center">
+                                        <div>Jaringan kecil &lt; 5 cm (&lt; 5 cc)</div>
+                                    </td>
+                                    <td class="px-6 py-5 text-on-surface-variant align-center">
+                                        <select
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
+                                            onchange="handleLinkTarget(this)">
+                                            <option value="none" selected>-- Ketik Sendiri --</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <select
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            <option>Dr. Arisandi, Sp.PA</option>
+                                            <option selected>Dr. Budi, Sp.PA</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <select
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none">
+                                            <option value="">— Pilih Dokter —</option>
+                                            <option selected>dr. Andi, Sp.OG</option>
+                                        </select>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <input
+                                            class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none"
+                                            type="text" value="KGB Leher" />
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <textarea
+                                            class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y"
+                                            rows="4">Diterima 2 buah nodul jaringan, ukuran 0,8 cm dan 1,2 cm, permukaan licin, tanpa noda.</textarea>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <div class="textarea-wrapper">
+                                            <textarea data-field="mikro"
+                                                class="w-full min-w-[200px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
+                                                rows="4">Struktur kelenjar getah bening masih intak. Tampak folikel-folikel limfoid reaktif dengan sentrum germinativum yang melebar. Tidak tampak metastasis sel tumor.</textarea>
+                                            <div class="linked-alert" data-alert="mikro">
+                                                Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
+                                                opsi yang dipilih.
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-5 align-center">
+                                        <div class="textarea-wrapper">
+                                            <textarea data-field="kesimpulan"
+                                                class="w-full min-w-[150px] bg-surface-container-low border-none rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-teal-600/20 outline-none resize-y transition-all"
+                                                rows="4">Limfadenitis reaktif kronis.</textarea>
                                             <div class="linked-alert" data-alert="kesimpulan">
                                                 Hasil Mikroskopis dan Kesimpulan akan disamakan secara otomatis dengan
                                                 opsi yang dipilih.
@@ -626,7 +761,8 @@
             </div>
             <div class="flex items-center gap-4">
                 <button
-                    class="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-outline-variant/40 text-on-surface-variant font-bold text-sm hover:bg-surface-container-low transition-all active:scale-95">
+                    class="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-outline-variant/40 text-on-surface-variant font-bold text-sm hover:bg-surface-container-low transition-all active:scale-95"
+                    onclick="window.location.href='hasil_cetak_sama_v2.html'">
                     <span class="material-symbols-outlined text-lg" data-icon="print">print</span>
                     Cetak Hasil
                 </button>

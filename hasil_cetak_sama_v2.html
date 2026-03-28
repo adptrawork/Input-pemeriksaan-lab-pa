@@ -11,7 +11,7 @@
         /* Pengaturan Font dan Kertas untuk Cetak */
         body {
             font-family: 'Roboto', sans-serif;
-            font-size: 11pt;
+            font-size: 9pt;
             color: #000;
             line-height: 1.4;
             margin: 0;
@@ -80,30 +80,39 @@
             text-transform: uppercase;
         }
 
-        /* User Identity Table Styles */
-        .table-outer {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 25px;
-            font-size: 9pt;
+        /* Kontainer utama dengan 2 kolom */
+        .patient-info-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Membagi menjadi 2 bagian yang sama besar */
+            gap: 10px 40px;
+            /* Jarak vertikal 10px, jarak horizontal 40px */
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            max-width: 900px;
         }
 
-        .table-outer td {
-            padding: 4px 5px;
-            vertical-align: top;
+        /* Tata letak untuk setiap baris data (Label : Nilai) */
+        .info-item {
+            display: grid;
+            grid-template-columns: 130px 15px 1fr;
+            /* Lebar label, titik dua, dan isi */
+            align-items: start;
         }
 
-        /* Set specific widths for label columns */
-        .table-outer td:nth-child(1),
-        .table-outer td:nth-child(4) {
-            width: 130px;
+        .info-label {
             font-weight: 500;
         }
 
-        .table-outer td:nth-child(2),
-        .table-outer td:nth-child(5) {
-            width: 15px;
+        .info-colon {
             text-align: center;
+        }
+
+        /* Responsif: Ubah jadi 1 kolom di layar HP (lebar maksimal 768px) */
+        @media (max-width: 768px) {
+            .patient-info-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Result Sections */
@@ -114,7 +123,7 @@
         .hasil-title {
             text-align: center;
             font-weight: bold;
-            font-size: 12pt;
+            font-size: 11pt;
             margin-bottom: 20px;
             text-decoration: underline;
         }
@@ -122,7 +131,7 @@
         .section-judul {
             font-weight: bold;
             margin-top: 20px;
-            font-size: 11pt;
+            font-size: 10pt;
             text-decoration: underline;
             text-transform: uppercase;
         }
@@ -138,9 +147,13 @@
         }
 
         .group-title {
-            font-style: italic;
             margin-bottom: 6px;
             font-weight: 500;
+        }
+
+        .empty-field {
+            color: #9ca3af;
+            font-style: italic;
         }
 
         /* Signature Section */
@@ -188,7 +201,7 @@
         .nav-button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #3b82f6;
+            background-color: #64748b;
             color: white;
             text-decoration: none;
             border-radius: 6px;
@@ -198,7 +211,7 @@
         }
 
         .nav-button:hover {
-            background-color: #2563eb;
+            background-color: #475569;
         }
 
         .btn-print {
@@ -224,28 +237,25 @@
 
 <body>
 
-    <!-- Universal Navigation Header -->
-    <div class="nav-container"
-        style="background-color: #1e293b; padding: 12px 20px; margin: 20px auto; max-width: 210mm; border-radius: 8px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-        <span
-            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Standar
-            (V1):</span>
-        <a href="form_input_berbeda.html"
-            style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
-        <a href="form_input_sama.html"
-            style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Sama
-            (Grouped)</a>
+    <!-- Navigation Header -->
+    <div style="background-color: #1e293b; padding: 12px 20px; margin: 20px auto; max-width: 210mm; border-radius: 8px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+        <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Form Input:</span>
+        <a href="form_input_pa_beda.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
+        <a href="form_input_pa_sama.html" style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Sama (Grouped)</a>
         <div style="width: 1px; height: 16px; background-color: #475569; margin: 0 5px;"></div>
-        <span
-            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">ICD-O
-            (V2):</span>
-        <a href="form_input_berbeda_v2.html"
-            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2
-            Berbeda</a>
-        <a href="form_input_sama_v2.html"
-            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2
-            Sama</a>
+        <span style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Cetak Hasil:</span>
+        <a href="hasil_cetak_berbeda_v2.html" style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Cetak Berbeda</a>
+        <a href="hasil_cetak_sama_v2.html" style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px; background-color: rgba(251,191,36,0.15);">Cetak Sama</a>
     </div>
+
+    <!-- Back Button -->
+    <a href="form_input_pa_sama.html" class="nav-button">
+        <span style="display: flex; align-items: center; gap: 6px;">
+            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+            <span>Kembali ke Form Input</span>
+        </span>
+    </a>
+
     <button onclick="window.print()" class="btn-print">Cetak Dokumen</button>
 
     <div class="page-a4">
@@ -268,63 +278,77 @@
 
         <div class="head-cetak-instansi">LAPORAN HASIL PEMERIKSAAN PATOLOGI ANATOMIK</div>
 
-        <table class="table-outer">
-            <tbody>
-                <tr>
-                    <td>Nama</td>
-                    <td>:</td>
-                    <td>NY. RINA MELATI</td>
-                    <td>No.PA</td>
-                    <td>:</td>
-                    <td>260412/3/H</td>
-                </tr>
-                <tr>
-                    <td>Umur</td>
-                    <td>:</td>
-                    <td>38 Tahun</td>
-                    <td>Dokter Pengirim</td>
-                    <td>:</td>
-                    <td>dr. Andi, Sp.OG</td>
-                </tr>
-                <tr>
-                    <td>Jenis Kelamin</td>
-                    <td>:</td>
-                    <td>Perempuan</td>
-                    <td>RS</td>
-                    <td>:</td>
-                    <td>RSUD H. ABDUL MANAP</td>
-                </tr>
-                <tr>
-                    <td>Ruangan</td>
-                    <td>:</td>
-                    <td>POLI KEBIDANAN</td>
-                    <td>No.MRE</td>
-                    <td>:</td>
-                    <td>334455</td>
-                </tr>
-                <tr>
-                    <td>Diterima tanggal</td>
-                    <td>:</td>
-                    <td>19 Maret 2026</td>
-                    <td>Lokasi</td>
-                    <td>:</td>
-                    <td>Gaster (Antrum), Colon (Ascendens), Gaster (Korpus), Ovarium Kanan</td>
-                </tr>
-                <tr>
-                    <td>Cara Peroleh</td>
-                    <td>:</td>
-                    <td>Operasi</td>
-                    <td>Keterangan Klinis</td>
-                    <td>:</td>
-                    <td>Gastritis & Kista Ovarium</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="patient-info-container">
+            <div class="info-item">
+                <div class="info-label">Nama</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">NY. RINA MELATI</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">No.PA</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">260412/3/H</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Umur</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">38 Tahun</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Dokter Pengirim</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">dr. Andi, Sp.OG</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Jenis Kelamin</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">Perempuan</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">RS</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">RSUD H. ABDUL MANAP</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Ruangan</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">POLI KEBIDANAN</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">No.MRE</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">334455</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Diterima tanggal</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">19 Maret 2026</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Lokasi</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">Gaster (Antrum), Colon (Ascendens), Gaster (Korpus), Ovarium Kanan, KGB Leher</div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-label">Cara Peroleh</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">Operasi</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Keterangan Klinis</div>
+                <div class="info-colon">:</div>
+                <div class="info-value">Gastritis & Kista Ovarium</div>
+            </div>
+        </div>
 
         <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin-bottom: 25px;">
 
         <div class="hasil-pa">
-            <div class="hasil-title">HASIL PEMERIKSAAN PATOLOGI (V2 GROUPED)</div>
 
             <div class="section-judul">MAKROSKOPIK</div>
             <div class="section-isi">
@@ -341,7 +365,7 @@
             <div class="section-judul">MIKROSKOPIK</div>
             <div class="section-isi">
                 <div class="item-list">
-                    <div class="group-title">Sampel sediaan I dan III menunjukkan gambaran yang serupa sebagai berikut:
+                    <div class="group-title">I & III. Sampel sediaan I dan III menunjukkan gambaran yang serupa sebagai berikut:
                     </div>
                     Tampak fragmen mukosa gaster dengan foveola gastrika yang intak. Pada lamina propria tampak sebukan
                     sel-sel radang limfosit, sel plasma, dan beberapa neutrofil. Kelenjar-kelenjar gaster dalam batas
@@ -349,14 +373,14 @@
                     tumor ganas.
                 </div>
                 <div class="item-list">
-                    <div class="group-title">Sampel sediaan II menunjukkan:</div>
-                    Sediaan menunjukkan polip adenomatosa yang terdiri dari proliferasi kelenjar-kelenjar yang dilapisi
+                    <strong>II.</strong> Sediaan menunjukkan polip adenomatosa yang terdiri dari proliferasi
+                    kelenjar-kelenjar yang dilapisi
                     epitel torak dengan inti hiperkromatik, memanjang, dan stratifikasi basal (low-grade dysplasia).
                     Tidak ditemukan tanda keganasan invasif.
                 </div>
                 <div class="item-list">
-                    <div class="group-title">Sampel sediaan IV menunjukkan:</div>
-                    Dinding kista dilapisi oleh selapis epitel kuboid hingga silindris bersilia (tipe tuba) yang intak
+                    <strong>IV.</strong> Dinding kista dilapisi oleh selapis epitel kuboid hingga silindris
+                    bersilia (tipe tuba) yang intak
                     tanpa adanya stratifikasi atau atipia nukleus. Stroma di bawahnya terdiri dari jaringan ikat
                     fibrokolagen yang padat. Tidak ditemukan tanda-tanda keganasan.
                 </div>
@@ -368,21 +392,20 @@
                         pylori</i>.</div>
                 <div class="item-list"><strong>II.</strong> Adenoma Tubulare dengan displasia derajat rendah.</div>
                 <div class="item-list"><strong>IV.</strong> Cystadenoma Serosum Ovarii, Benigna.</div>
-            </div>
+                <div class="item-list"><strong>V.</strong> Limfadenitis reaktif kronis.</div>
 
-            <div class="section-judul">ICD-O (Klasifikasi Onkologi)</div>
-            <div class="section-isi">
-                <div class="item-list"><strong>I & III.</strong> - </div>
-                <div class="item-list"><strong>II.</strong> 8211/0 (Tubular adenoma, NOS)</div>
-                <div class="item-list"><strong>IV.</strong> - </div>
+                <div class="item-list">
+                    <strong class="empty-field">ICD-0: (Belum diisi)</strong>
+                </div>
             </div>
 
             <div class="section-judul">SARAN / ANJURAN</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I & III.</strong> Terapi eradikasi H. pylori sesuai indikasi klinis.
+                <div class="item-list">
+                    - Terapi eradikasi H. pylori sesuai indikasi klinis.
                 </div>
-                <div class="item-list"><strong>II.</strong> Eksisi lengkap disarankan untuk pencegahan keganasan.</div>
-                <div class="item-list"><strong>IV.</strong> Observasi klinis rutin disarankan.</div>
+                <div class="item-list">- Eksisi lengkap disarankan untuk pencegahan keganasan.</div>
+                <div class="item-list">- Observasi klinis rutin disarankan.</div>
             </div>
         </div>
 

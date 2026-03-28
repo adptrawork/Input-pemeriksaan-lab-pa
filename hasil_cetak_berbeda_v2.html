@@ -218,28 +218,29 @@
 
 <body>
 
-    <!-- Universal Navigation Header -->
-    <div class="nav-container"
+    <!-- Navigation Header -->
+    <div
         style="background-color: #1e293b; padding: 12px 20px; margin: 20px auto; max-width: 210mm; border-radius: 8px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
         <span
-            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Standar
-            (V1):</span>
-        <a href="form_input_berbeda.html"
+            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Form
+            Input:</span>
+        <a href="form_input_pa_beda.html"
             style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Berbeda</a>
-        <a href="form_input_sama.html"
+        <a href="form_input_pa_sama.html"
             style="color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Sama
             (Grouped)</a>
         <div style="width: 1px; height: 16px; background-color: #475569; margin: 0 5px;"></div>
         <span
-            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">ICD-O
-            (V2):</span>
-        <a href="form_input_berbeda_v2.html"
-            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2
+            style="color: #94a3b8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">Cetak
+            Hasil:</span>
+        <a href="hasil_cetak_berbeda_v2.html"
+            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px; background-color: rgba(251,191,36,0.15);">Cetak
             Berbeda</a>
-        <a href="form_input_sama_v2.html"
-            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">V2
+        <a href="hasil_cetak_sama_v2.html"
+            style="color: #fbbf24; text-decoration: none; font-size: 14px; font-weight: 500; padding: 5px 10px; border-radius: 4px;">Cetak
             Sama</a>
     </div>
+
     <button onclick="window.print()" class="btn-print">Cetak Dokumen</button>
 
     <div class="page-a4">
@@ -318,7 +319,6 @@
         <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin-bottom: 25px;">
 
         <div class="hasil-pa">
-            <div class="hasil-title">HASIL PEMERIKSAAN PATOLOGI</div>
 
             <div class="section-judul">MAKROSKOPIK</div>
             <div class="section-isi">
@@ -350,21 +350,18 @@
                 <div class="item-list"><strong>I.</strong> Esofagitis refluks kronis eksaserbasi akut.</div>
                 <div class="item-list"><strong>II.</strong> Invasive Ductal Carcinoma, Mammae Dextra.</div>
                 <div class="item-list"><strong>III.</strong> Limfadenitis reaktif kronis.</div>
+                <div class="item-list"><strong>
+                        ICD-0 : 8500/3 (Infiltrating duct carcinoma, NOS)
+                    </strong></div>
             </div>
 
-            <div class="section-judul">ICD-O (Klasifikasi Onkologi)</div>
-            <div class="section-isi">
-                <div class="item-list"><strong>I.</strong> - (Bukan merupakan kasus onkologi)</div>
-                <div class="item-list"><strong>II.</strong> 8500/3 (Infiltrating duct carcinoma, NOS)</div>
-                <div class="item-list"><strong>III.</strong> - </div>
-            </div>
 
             <div class="section-judul">SARAN / ANJURAN</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I.</strong> Korelasi klinis dan endoskopi lebih lanjut.</div>
-                <div class="item-list"><strong>II.</strong> Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67)
+                <div class="item-list">- Korelasi klinis dan endoskopi lebih lanjut.</div>
+                <div class="item-list">- Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67)
                     untuk penentuan terapi lanjutan.</div>
-                <div class="item-list"><strong>III.</strong> Pemantauan klinis.</div>
+                <div class="item-list">- Pemantauan klinis.</div>
             </div>
         </div>
 
