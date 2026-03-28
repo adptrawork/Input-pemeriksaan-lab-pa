@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cetak Hasil PA V2 - SIMRS</title>
+    <title>Cetak Hasil PA 1 Sediaan - SIMRS</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-        /* Pengaturan Font dan Kertas untuk Cetak */
         body {
             font-family: 'Roboto', sans-serif;
             font-size: 11pt;
@@ -30,7 +29,6 @@
             border-radius: 4px;
         }
 
-        /* User Header Styles */
         .head-cetak {
             display: flex;
             align-items: center;
@@ -115,7 +113,6 @@
             }
         }
 
-        /* Result Sections */
         .hasil-pa {
             margin-top: 20px;
         }
@@ -146,7 +143,6 @@
             margin-bottom: 12px;
         }
 
-        /* Signature Section */
         .ttd-container {
             margin-top: 50px;
         }
@@ -182,26 +178,10 @@
 
             .nav-container,
             .nav-button,
-            .btn-print {
+            .btn-print,
+            .btn-back {
                 display: none !important;
             }
-        }
-
-        /* Buttons */
-        .nav-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            margin: 20px;
-            transition: background 0.2s;
-        }
-
-        .nav-button:hover {
-            background-color: #2563eb;
         }
 
         .btn-print {
@@ -222,11 +202,35 @@
         .btn-print:hover {
             background: #0f172a;
         }
+
+        .btn-back {
+            position: fixed;
+            top: 20px;
+            right: 170px;
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-back:hover {
+            background: #475569;
+        }
     </style>
 </head>
 
 <body>
 
+    <a href="form_input_1_sediaan.html" class="btn-back">Kembali</a>
     <button onclick="window.print()" class="btn-print">Cetak Dokumen</button>
 
     <div class="page-a4">
@@ -253,23 +257,23 @@
             <div class="info-item">
                 <div class="info-label">Nama</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">NY. RATNA SARI</div>
+                <div class="info-value">NY. SITI AMINAH</div>
             </div>
             <div class="info-item">
                 <div class="info-label">No.PA</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">260410/1/H</div>
+                <div class="info-value">260428/1/H</div>
             </div>
 
             <div class="info-item">
                 <div class="info-label">Umur</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">45 Tahun</div>
+                <div class="info-value">32 Tahun</div>
             </div>
             <div class="info-item">
                 <div class="info-label">Dokter Pengirim</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">dr. Budi, Sp.B</div>
+                <div class="info-value">dr. Rina, Sp.DV</div>
             </div>
 
             <div class="info-item">
@@ -286,35 +290,35 @@
             <div class="info-item">
                 <div class="info-label">Ruangan</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">POLI BEDAH</div>
+                <div class="info-value">POLI KULIT</div>
             </div>
             <div class="info-item">
                 <div class="info-label">No.MRE</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">210984</div>
+                <div class="info-value">450112</div>
             </div>
 
             <div class="info-item">
                 <div class="info-label">Diterima tanggal</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">18 Maret 2026</div>
+                <div class="info-value">28 Maret 2026</div>
             </div>
             <div class="info-item">
                 <div class="info-label">Lokasi</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">Esofagus, Payudara Kanan, KGB Leher
+                <div class="info-value">Kulit Punggung
                 </div>
             </div>
 
             <div class="info-item">
                 <div class="info-label">Cara Peroleh</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">Operasi</div>
+                <div class="info-value">Biopsi Eksisi</div>
             </div>
             <div class="info-item">
                 <div class="info-label">Keterangan Klinis</div>
                 <div class="info-colon">:</div>
-                <div class="info-value">Esofagitis & Massa Mammae Dextra</div>
+                <div class="info-value">Lesi hiperpigmentasi kulit punggung</div>
             </div>
         </div>
 
@@ -322,54 +326,36 @@
 
         <div class="hasil-pa">
 
+            <div class="hasil-title">HASIL PEMERIKSAAN PATOLOGI</div>
+
             <div class="section-judul">MAKROSKOPIK</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I. Esofagus:</strong> Diterima 2 keping jaringan, ukuran masing-masing
-                    0,3 cm dan 0,4 cm, berwarna putih keabuan, konsistensi kenyal. Semua dicetak dalam 1 blok.</div>
-                <div class="item-list"><strong>II. Payudara Kanan:</strong> Diterima 1 buah jaringan berbenjol tak
-                    beraturan ukuran 4 x 3 x 2 cm. Pada pembelahan tampak penampang padat berwarna putih kecoklatan,
-                    kenyal.</div>
-                <div class="item-list"><strong>III. KGB Leher:</strong> Diterima 3 buah nodul jaringan, ukuran terbesar
-                    1,5 cm, terkecil 0,5 cm, penampang kecoklatan.</div>
+                <div class="item-list">Diterima 1 potong jaringan kulit berukuran 0,8 x 0,5 x 0,3 cm. Pada permukaan
+                    kulit tampak lesi hiperpigmentasi berbatas tegas, diameter 0,4 cm.</div>
             </div>
 
             <div class="section-judul">MIKROSKOPIK</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I.</strong> Sediaan biopsi menunjukkan fragmen mukosa esofagus berlapis
-                    epitel skuamosa yang mengalami hiperplasia sel basal dan pemanjangan papila lamina propria. Tampak
-                    sebukan sel radang limfosit dan neutrofil intraepitelial. Tidak tampak sel ganas.</div>
-                <div class="item-list"><strong>II.</strong> Sediaan jaringan payudara menunjukkan proliferasi sel-sel
-                    epitel duktus yang tersusun padat, membentuk struktur cribriform dan komedo nekrosis di bagian
-                    tengah. Inti sel pleomorfik, hiperkromatik dengan aktivitas mitosis meningkat. Tampak invasi sel
-                    tumor ke stroma sekitarnya.</div>
-                <div class="item-list"><strong>III.</strong> Struktur kelenjar getah bening masih intak. Tampak
-                    folikel-folikel limfoid reaktif dengan sentrum germinativum yang melebar. Tampak sebukan sel
-                    makrofag. Tidak tampak metastasis sel tumor.</div>
+                <div class="item-list">Sediaan kulit menunjukkan epidermis yang intak. Pada dermoepidermal junction dan
+                    dermis bagian atas tampak sarang-sarang (nests) sel melanosit berinti bulat-oval, monomorf, tanpa
+                    atipia, dan tidak tampak aktivitas mitosis. Terdapat pigmen melanin di dalam sitoplasma.</div>
             </div>
 
             <div class="section-judul">KESIMPULAN</div>
             <div class="section-isi">
-                <div class="item-list"><strong>I.</strong> Esofagitis refluks kronis eksaserbasi akut.</div>
-                <div class="item-list"><strong>II.</strong> Invasive Ductal Carcinoma, Mammae Dextra.</div>
-                <div class="item-list"><strong>III.</strong> Limfadenitis reaktif kronis.</div>
-                <div class="item-list"><strong>
-                        ICD-0 : 8500/3 (Infiltrating duct carcinoma, NOS)
-                    </strong></div>
+                <div class="item-list">Compound Nevus, Benigna.</div>
             </div>
-
 
             <div class="section-judul">SARAN / ANJURAN</div>
             <div class="section-isi">
-                <div class="item-list">- Korelasi klinis dan endoskopi lebih lanjut.</div>
-                <div class="item-list">- Disarankan pemeriksaan Imunohistokimia (ER, PR, HER2, Ki-67)
-                    untuk penentuan terapi lanjutan.</div>
-                <div class="item-list">- Pemantauan klinis.</div>
+                <div class="item-list">- Eksisi komplit.</div>
+                <div class="item-list">- Observasi klinis.</div>
             </div>
         </div>
 
         <div class="ttd-container clearfix">
             <div class="ttd-box">
-                <p>Jambi, 18 Maret 2026</p>
+                <p>Jambi, 28 Maret 2026</p>
 
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=Validasi_Dokter_Betty"
                     alt="QR Code TTD">
